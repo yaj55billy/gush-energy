@@ -8,7 +8,7 @@
 			:duration="4000"
 			:throttle="0"
 		/> -->
-		<!-- <Header /> -->
+		<Header />
 		<slot />
 		<!-- <Footer /> -->
 	</div>

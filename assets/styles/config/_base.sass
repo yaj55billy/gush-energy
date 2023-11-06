@@ -2,42 +2,42 @@
 	font-family: 'Gen Jyuu Gothic'
 	font-style: normal
 	font-weight: 100
-	src: url(~/assets/font/GenJyuuGothic-ExtraLight.woff2) format("woff2"), url(~/assets/font/GenJyuuGothic-ExtraLight.woff) format("woff")
+	src: url('~/assets/font/genjyuugothic-extralight.woff2') format("woff2"), url('~/assets/font/genjyuugothic-extralight.woff') format("woff")
 	font-display: fallback
 
 @font-face
 	font-family: 'Gen Jyuu Gothic'
 	font-style: normal
 	font-weight: 300
-	src: url(~/assets/font/GenJyuuGothic-Light.woff2) format("woff2"), url(~/assets/font/GenJyuuGothic-Light.woff) format("woff")
+	src: url('~/assets/font/genjyuugothic-light.woff2') format("woff2"), url('~/assets/font/genjyuugothic-light.woff') format("woff")
 	font-display: fallback
 
 @font-face
 	font-family: 'Gen Jyuu Gothic'
 	font-style: normal
 	font-weight: 400
-	src: url(./font/GenJyuuGothic-Normal.woff2) format("woff2"), url(./font/GenJyuuGothic-Normal.woff) format("woff")
+	src: url('~/assets/font/genjyuugothic-normal.woff2') format("woff2"), url('~/assets/font/genjyuugothic-normal.woff') format("woff")
 	font-display: fallback
 
 @font-face
 	font-family: 'Gen Jyuu Gothic'
 	font-style: normal
 	font-weight: 500
-	src: url(~/assets/font/GenJyuuGothic-Medium.woff2) format("woff2"), url(~/assets/font/GenJyuuGothic-Medium.woff) format("woff")
+	src: url('~/assets/font/genjyuugothic-medium.woff2') format("woff2"), url('~/assets/font/genjyuugothic-medium.woff') format("woff")
 	font-display: fallback
 
 @font-face
 	font-family: 'Gen Jyuu Gothic'
 	font-style: normal
 	font-weight: 700
-	src: url(~/assets/font/GenJyuuGothic-Bold.woff2) format("woff2"), url(~/assets/font/GenJyuuGothic-Bold.woff) format("woff")
+	src: url('~/assets/font/genjyuugothic-bold.woff2') format("woff2"), url('~/assets/font/genjyuugothic-bold.woff') format("woff")
 	font-display: fallback
 
 @font-face
 	font-family: 'Gen Jyuu Gothic'
 	font-style: normal
 	font-weight: 900
-	src: url(~/assets/font/GenJyuuGothic-Heavy.woff2) format("woff2"), url(~/assets/font/GenJyuuGothic-Heavy.woff) format("woff")
+	src: url('~/assets/font/genjyuugothic-heavy.woff2') format("woff2"), url('~/assets/font/genjyuugothic-heavy.woff') format("woff")
 	font-display: fallback
 
 *,*::before,*::after 
@@ -47,7 +47,7 @@ body, html
 	font-family: $font-family-default
 	font-weight: $font-weight-normal
 	font-size: 16px
-	color: $color-primary
+	// color: $color-primary
 	line-height: 1.7
 	position: relative
 	+sm 
@@ -56,53 +56,53 @@ body, html
 		// background-color: $color-selection
 
 .h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6
-	font-weight: $font-weight-bold
-	color: $color-primary-title
+	// font-weight: $font-weight-bold
+	// color: $color-primary-title
 .h1, h1, .h2, h2, .h3, h3
 	// margin-top: 1.75rem
 .h4, h4, .h5, h5, .h6, h6
 	// margin-top: 1.25rem
 
-.h1, h1
-	font-size: $font-size-base * 3.5 
-.h2, h2
-	font-size: $font-size-base * 3 
-	+lg 
-		font-size: $font-size-base * 2.5 
-	+sm 
-		font-size: $font-size-base * 2.0
-.h3, h3
-	font-size: $font-size-base * 2
-.h4, h4
-	font-size: $font-size-base * 1.75
-	+lg 
-		font-size: $font-size-base * 1.5 
-	+sm 
-		font-size: $font-size-base * 1.25
-.h5, h5
-	font-size: $font-size-base * 1.5
-	+lg 
-		font-size: $font-size-base * 1.25 
-	+sm 
-		font-size: $font-size-base * 1.25
-.h6, h6
-	font-size: $font-size-base * 1.25
-p 
-	font-size: $font-size-base
-	font-weight: $font-weight-normal
-	color: $color-primary
-	margin-top: .75rem
-strong 
-	font-weight: $font-weight-normal
-	color: $color-primary
-a
-	font-size: $font-size-base
-	font-weight: $font-weight-normal
-	color: $color-primary
-	text-decoration: none
-	cursor: pointer
-span 
-	color: $color-primary
+// .h1, h1
+// 	font-size: $font-size-base * 3.5 
+// .h2, h2
+// 	font-size: $font-size-base * 3 
+// 	+lg 
+// 		font-size: $font-size-base * 2.5 
+// 	+sm 
+// 		font-size: $font-size-base * 2.0
+// .h3, h3
+// 	font-size: $font-size-base * 2
+// .h4, h4
+// 	font-size: $font-size-base * 1.75
+// 	+lg 
+// 		font-size: $font-size-base * 1.5 
+// 	+sm 
+// 		font-size: $font-size-base * 1.25
+// .h5, h5
+// 	font-size: $font-size-base * 1.5
+// 	+lg 
+// 		font-size: $font-size-base * 1.25 
+// 	+sm 
+// 		font-size: $font-size-base * 1.25
+// .h6, h6
+// 	font-size: $font-size-base * 1.25
+// p 
+// 	font-size: $font-size-base
+// 	font-weight: $font-weight-normal
+// 	color: $color-primary
+// 	margin-top: .75rem
+// strong 
+// 	font-weight: $font-weight-normal
+// 	color: $color-primary
+// a
+// 	font-size: $font-size-base
+// 	font-weight: $font-weight-normal
+// 	color: $color-primary
+// 	text-decoration: none
+// 	cursor: pointer
+// span 
+// 	color: $color-primary
 
 ul, ol 
 	padding-left: 0
@@ -121,20 +121,14 @@ img
 	max-width: 100%
 	height: auto
 
-hr 
-	margin-top: 3rem
-	margin-bottom: 3rem
-	border: dashed 1px lighten($color-primary, 10%)
+// hr 
+// 	margin-top: 3rem
+// 	margin-bottom: 3rem
+// 	border: dashed 1px lighten($color-primary, 10%)
 
 button 
 	background: none 
 	border: none
-
-.index
-	background-color: $color-bgc
-	padding-top: 84px
-	+md 
-		padding-top: 68px
 
 .container 
 	max-width: 980px
@@ -144,33 +138,3 @@ button
 		padding: 0 20px
 	+md
 		padding: 0 15px
-
-.section
-	position: relative
-	padding-top: 68px
-	padding-bottom: 68px
-	&::after
-		content: ''
-		position: absolute
-		bottom: 0
-		left: 0
-		right: 0
-		max-width: 980px
-		margin: auto
-		border-bottom: solid 4px $color-primary-title
-		+xl 
-			width: calc(100% - 40px)
-		+md 
-			width: calc(100% - 30px)
-	&__title
-		display: block
-		text-align: center
-		&::after
-			content: ""
-			display: block
-			width: 150px
-			height: 8px
-			background-color: $color-primary-title
-			margin: 0 auto 40px
-		
-

@@ -1,4 +1,40 @@
-// .header 
+.header
+	position: absolute
+	z-index: 100
+	width: 100%
+	padding: 15px 0 0 32px
+	&__content
+		display: flex
+		justify-content: space-between
+		align-items: center
+	&__logo
+		width: 160px
+
+.nav 
+	&__toggle
+		display: none
+	&__menu
+		&__link
+			position: relative
+			font-size: 0.875rem
+			font-weight: 400
+			color: $color-white
+			padding: 0 32px
+			text-decoration: none
+			&::after
+				content: ''
+				position: absolute
+				top: 50%
+				right: 0
+				transform: translateY(-50%)
+				width: 1px
+				height: 16px
+				background-color: $color-white
+			&:last-child::after 
+				display: none				
+			&:hover 
+				font-weight: 700
+
 //   position: fixed
 //   top: 0
 //   left: 0
