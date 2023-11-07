@@ -14,7 +14,8 @@ $font-family-default: 'Gen Jyuu Gothic', 'Noto Sans TC', 'Microsoft JhengHei', '
 
 // ----- COLOR -----
 $color-white:    #fff !default
-$color-white-800: rgba(255,255,255, .82) !default
+$color-white-750: rgba(255,255,255, .75) !default
+$color-white-500: rgba(255,255,255, .5) !default
 $color-gray-100: #fdfeff !default
 $color-gray-200: #f2f2f2 !default
 $color-gray-300: #dee2e6 !default
@@ -26,16 +27,17 @@ $color-gray-800: #343a40 !default
 // $color-gray-900: #0e090d !default
 $color-gray-900: #111222 !default
 $color-black:    #000 !default
-$color-blue:     #222934 !default 
+$color-blue-dark:  #283443 !default
+$color-blue-dark2:  #23293A !default
+$color-blue-light:#445870 !default
 $color-sky:      #7dd3fc !default
 $color-purple:   #a855f7 !default
 $color-pink:     #ec4899 !default
 $color-red:      #f43f5e !default
-$color-orange:   #f97316 !default
+$color-orange:   #FB910B !default
 $color-yellow:   #eab308 !default
 $color-green:    #22c55e !default
-// $color-blue-dark:  darken(#131518, 15%) !default
-// $color-blue-light: lighten(#3b82f6, 15%) !default
+
 
 // ----- COLOR 抽象 -----
 $color-primary:    $color-black !default
@@ -43,7 +45,7 @@ $color-primary-title:    $color-gray-900 !default
 $color-secondary:  $color-gray-200 !default 
 $color-emphasis:   $color-sky !default // 強調色
 $color-bgc:        $color-gray-100 !default // 背景色
-$color-selection:  $color-blue !default // 背景框選
+// $color-selection:  $color-blue !default // 背景框選
 $color-line:       $color-gray-300 !default // Line
 $color-success:    $color-green !default
 $color-info:       $color-orange !default
@@ -54,7 +56,7 @@ $color-danger:     $color-red !default
 // ----- GRID -----
 $gutter-width: 30px
 $grid-num: 12
-$grid-breakpoints: ('': false, xxl: 1400px, xl: 1199px, lg: 991px, md: 767px, sm: 575px, xs: 420px) // xxxl, xxl, xl, lg, md, sm, xs
+$grid-breakpoints: ('': false, xxl: 1500px, xl: 1199px, lg: 1024px, md: 768px, sm: 575px, xs: 420px) // xxxl, xxl, xl, lg, md, sm, xs
 $xxl: map-get($grid-breakpoints, xxl) 
 $xl:  map-get($grid-breakpoints, xl) 
 $lg:  map-get($grid-breakpoints, lg) 
