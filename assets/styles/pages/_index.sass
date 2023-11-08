@@ -2,26 +2,41 @@
 // $color-blue-dark2:  #23293A !default 案例底部 btn
 // $color-blue-light:#445870 !default
 //$color-orange
-.kv1,.kv2
-	width: 100%
-	min-height: 100vh
-	background-position: bottom
-	background-size: cover
-	&::after
-		content: ''
-		position: absolute
-		top: 0
-		left: 0
-		width: 100%
-		height: 100%
-		opacity: 0.4
-		background-color: #23293A
-.kv1
-	background-image: url('@/assets/img/kv.jpg')
-.kv2
-	background-image: url('@/assets/img/kv.jpg')
+.fade-about-enter-active,.fade-about-leave-active
+	transition: opacity .4s ease-in-out
+
+.fade-about-enter-from,.fade-about-leave-to
+	opacity: 0
+
+
+.scale-kv-enter-from
+	opacity: 0.95
+	transform: scale(1)
+	// ：进入动画的起始状态。在元素插入之前添加，在元素插入完成后的下一帧移除。
+
+.scale-kv-enter-active
+	transition: all 5s ease-in-out
+.scale-kv-enter-to
+	opacity: 1
+	transform: scale(1.1)
+	// 进入动画的结束状态。在元素插入完成后的下一帧被添加 (也就是 v-enter-from 被移除的同时)，在过渡或动画完成之后移除。
+
+.scale-kv-leave-from
+	opacity: 1
+	transform: scale(1.1)
+	//离开动画的起始状态。在离开过渡效果被触发时立即添加，在一帧后被移除。
+
+.scale-kv-leave-active
+	transition: all 5s ease-in-out
+
+.scale-kv-leave-to
+	opacity: 0.95
+	transform: scale(1)
+
 
 $xPaddingCount: 8% 
+$xPaddingCount1199: 5% 
+$xPaddingCount768: 24px
 .index 
 	// +xxl 
 	// 	1500px
@@ -35,9 +50,45 @@ $xPaddingCount: 8%
 	// 	575px 
 	// +xs 
 	// 	420px
+	@keyframes kvImageFirst
+		0%
+			opacity: 0.95
+			transform: scale(1)
+		100%
+			opacity: 1
+			transform: scale(1.1)
 	&__kv
 		position: relative
-		&__content
+		color: $color-white
+		text-align: center
+		line-height: 1.25
+		&__pic 
+			width: 100%
+			height: 100vh
+			overflow: hidden
+			position: relative
+			&::after 
+				content: ''
+				display: block
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				opacity: 0.5
+				background: #23293A
+		&__image 
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background-position: center
+			background-size: cover 
+			animation-name: kvImageFirst
+			animation-duration: 5s
+			animation-fill-mode: forwards
+		&__container
 			position: absolute
 			top: 0
 			left: 0
@@ -47,6 +98,14 @@ $xPaddingCount: 8%
 			justify-content: center
 			align-items: center
 			flex-direction: column
+		&__title
+			font-size: 4rem
+		&__description
+			font-size: 2rem
+			margin-top: 24px
+		&__btn 
+			margin-top: 40px
+			
 	&__about
 		// +xxl 
 		// 	1500px
@@ -63,11 +122,21 @@ $xPaddingCount: 8%
 		background-color: $color-blue-light
 		width: 100%
 		display: flex 
+		+md 
+			flex-wrap: wrap
+			flex-direction: column-reverse
 		&__info
 			width: 50%
+			+md
+				width: 100%
 		&__container
-			padding: 70px 16%
+			padding: 70px $xPaddingCount*2
 			margin: 0 auto
+			+xl 
+				padding: 70px $xPaddingCount1199*2
+			+md 
+				padding: 32px $xPaddingCount768 50px
+				text-align: center
 		&__title
 			font-size: 2rem
 			color: $color-white
@@ -75,22 +144,46 @@ $xPaddingCount: 8%
 			font-size: 1.5rem
 			color: $color-white
 			margin-top: 60px
+			position: relative
+			+md 
+				margin-top: 12px
+			span
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
 		&__text
 			font-size: 1.125rem
 			color: $color-white-500
 			line-height: 1.4
 			margin-top: 15px
+			+md 
+				margin-top: 12px
 		&__link
 			font-size: 1.125rem
 			color: $color-orange
 			margin-top: 32px
 			display: inline-block
+			transition: opacity .3s
+			+md 
+				margin-top: 20px
+			&:hover 
+				opacity: .9
+				.index__about__icon
+					transform: translateX(2px)
+		&__icon 
+			width: 9px
+			transition: transform .3s
 		&__pagination
 			display: flex 
 			flex-wrap: wrap
 			margin-top: 60px
 			list-style: none
-			&__item
+			+md 
+				margin-top: 40px
+				justify-content: center
+			&__item	
 				width: 10px
 				height: 10px
 				border: solid 1px #D9D9D9
@@ -103,10 +196,17 @@ $xPaddingCount: 8%
 					
 		&__pic
 			width: 50%
+			padding-bottom: 34% // 486/720 > 67.5% > 67.5/2
+			position: relative
+			+md
+				width: 100%
+				padding-bottom: 67.5%
 		&__image
+			position: absolute
+			top: 0
+			left: 0
 			width: 100%
-			height: 0
-			padding-bottom: 67.5%
+			height: 100%
 			background-position: center
 			background-size: cover 
 	&__service
@@ -116,22 +216,63 @@ $xPaddingCount: 8%
 			margin: 0 auto
 			text-align: center
 			color: $color-white
+			+xl 
+				padding: 75px $xPaddingCount1199 180px
 		&__title
 			font-size: 2rem
 		&__text
 			font-size: 1.125rem
+		&__list 
+			margin-top: 55px
+			list-style: none
+			display: flex 
+			justify-content: space-between
+			+lg 
+				flex-wrap: wrap
+				justify-content: center
+				margin-top: 35px
+		&__item
+			margin-right: 2.7%
+			width: calc(89.2% / 5) // 100 - (2.7*4)
+			background-color: #C0C9D4
+			padding: 25px 15px 45px
+			border-radius: 8px
+			box-shadow: 0px 4px 24px 0px rgba(255, 255, 255, 0.15)
+			transition: all .4s ease-in-out
+			position: relative
+			+lg 
+				width: 32%
+				margin-right: 2%
+				margin-top: 20px
+			&:nth-child(3)
+				+lg 
+					margin-right: 0
+			&:last-child
+				margin-right: 0
+			&:hover 
+				background-color: $color-white
+				box-shadow: 0px 24px 36px 0px rgba(0, 0, 0, 0.50)
+				.index__service__itemtext
+					color: $color-blue-light
+		&__itempic
+			width: 150px
+			margin: 0 auto
+			+xl 
+				width: 120px
+		&__itemtitle
+			font-size: 1.25rem
+			margin-top: -5px
+		&__itemtext 
+			font-size: .875rem
+			transition: color .4s ease-in-out
+		&__itemlink
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+
 			
-			ul 
-				list-style: none
-				display: flex 
-				justify-content: space-between
-				li
-					width: calc(89.2% /5)
-					height: 350px
-					margin-right: 2.7%
-					background-color: #eee
-					&:last-child
-						margin-right: 0
 	&__case
 		background-color: $color-blue-dark2
 		// +xxl 
@@ -149,8 +290,12 @@ $xPaddingCount: 8%
 		&__main
 			list-style: none
 			display: flex
+			+md 
+				flex-wrap: wrap
 		&__item
 			width: 33.33333%
+			+md 
+				width: 100%
 		&__image
 			width: 100%
 			height: 0
@@ -170,6 +315,8 @@ $xPaddingCount: 8%
 				opacity: 0
 				background-color: $color-black
 				transition: opacity .4s ease-in-out
+				+md 
+					opacity: .45
 			&:hover
 				&::after 
 					opacity: .65
@@ -184,6 +331,11 @@ $xPaddingCount: 8%
 			text-align: center
 			transition: opacity .4s ease-in-out
 			opacity: 0
+			+xl 
+				padding: 0 $xPaddingCount1199*3
+			+md 
+				padding: 0 $xPaddingCount768
+				opacity: 1 
 		&__title
 			font-size: 1.125rem
 			color: $color-white

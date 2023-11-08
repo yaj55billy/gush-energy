@@ -1,6 +1,7 @@
 <script setup>
 // import xxx from "@/components/xxx"
 import { ref, computed, onMounted } from "vue";
+import { useIndexAbout } from "@/composables/useIndexAbout.js";
 
 const useAsset = (path) => {
 	const assetsImg = import.meta.glob("~/assets/img/\*", {
@@ -9,145 +10,142 @@ const useAsset = (path) => {
 	});
 	return assetsImg["/assets/img/" + path];
 };
-
-const kvImgData = ref([
+const kvData = ref([
 	{
 		id: "kv1",
-		url: "../assets/img/kv.jpg",
+		path: "kv.jpg",
 	},
 	{
 		id: "kv2",
-		url: "../assets/img/kv.jpg",
+		path: "kv_temp1.jpg",
+	},
+	{
+		id: "kv3",
+		path: "kv_temp2.jpg",
 	},
 ]);
+const kvDataActive = ref(0);
+const nowKvData = computed(() => kvData.value[kvDataActive.value]);
+const nowKvPath = computed(() => nowKvData.value.path);
+let kvTimer = null;
+const changeKvDataActive = (index) => {
+	kvDataActive.value = (index + kvData.value.length) % kvData.value.length;
+	startKvTimer();
+};
+const kvTimerHandler = () => {
+	changeKvDataActive(kvDataActive.value + 1);
+	startKvTimer();
+};
+const startKvTimer = () => {
+	clearTimeout(kvTimer);
+	kvTimer = setTimeout(kvTimerHandler, 5000);
+};
 
-let timer = null;
+const {
+	aboutData,
+	aboutDataActive,
+	nowAboutData,
+	nowAboutTitle,
+	nowAboutDescription,
+	nowAboutLink,
+	nowAboutPath,
+	aboutTimer,
+	changeAboutDataActive,
+	aboutTimerHandler,
+	startAboutTimer,
+	stopAboutTimer,
+} = useIndexAbout();
 
 // index about
-const aboutDataActive = ref(0);
-const nowAboutData = computed(() => aboutData.value[aboutDataActive.value]);
-const nowAboutTitle = computed(() => nowAboutData.value.title);
-const nowAboutDescription = computed(() => nowAboutData.value.description);
-const nowAboutLink = computed(() => nowAboutData.value.link);
-const nowAboutPath = computed(() => nowAboutData.value.path);
 
-// const setTimer = () => {
-// 	clearTimeout(timer);
-// 	timer = setTimeout(() => {
-// 		console.log("執行");
-// 		aboutDataActive.value + 1;
-// 	}, 3000);
-// };
-const aboutData = ref([
-	{
-		id: "about1",
-		title: "湧業能源與企業合作",
-		description:
-			"湧業能源與電力將會聯手合作，在未來的3年內共同打造5個發電廠，並將整合相關技術以達到2050淨零排碳的目標",
-		link: "/about",
-		path: "pic1.jpg",
-	},
-	{
-		id: "about2",
-		title: "湧業能源與企業合作2",
-		description:
-			"湧業能源與電力將會聯手合作，在未來的3年內共同打造5個發電廠，並將整合相關技術以達到2050淨零排碳的目標",
-		link: "/about",
-		path: "testpic.png",
-	},
-	{
-		id: "about3",
-		title: "湧業能源與企業合作3",
-		description:
-			"湧業能源與電力將會聯手合作，在未來的3年內共同打造5個發電廠，並將整合相關技術以達到2050淨零排碳的目標",
-		link: "/about",
-		path: "pic1.jpg",
-	},
-	{
-		id: "about4",
-		title: "湧業能源與企業合作4",
-		description:
-			"湧業能源與電力將會聯手合作，在未來的3年內共同打造5個發電廠，並將整合相關技術以達到2050淨零排碳的目標",
-		link: "/about",
-		path: "testpic2.png",
-	},
-]);
 onMounted(() => {
-	// if (aboutData.value.length > 1) {
-	// 	setTimer();
-	// }
+	if (aboutData.value.length > 1) {
+		startAboutTimer();
+	}
+	if (kvData.value.length > 1) {
+		startKvTimer();
+	}
+});
+onUnmounted(() => {
+	clearTimeout(aboutTimer);
+	clearTimeout(kvTimer);
 });
 </script>
 
 <template>
 	<div class="index">
-		<!-- 主視覺區塊 -->
-		<section class="index__kv" style="min-height: 400px">
-			<div class="index__kv__content">
+		<section class="index__kv">
+			<div class="index__kv__pic">
+				<Transition name="scale-kv">
+					<div
+						class="index__kv__image"
+						:key="nowKvPath"
+						:style="{
+							backgroundImage: `url(${useAsset(nowKvPath)})`,
+						}"
+					></div>
+				</Transition>
+			</div>
+
+			<div class="index__kv__container">
 				<h1 class="index__kv__title">與湧業能源<br />共創永續家園</h1>
 				<p class="index__kv__description">看不見的能源 看得見的改變</p>
-				<NuxtLink to="/about" class="index__kv__btn">深入了解</NuxtLink>
+				<div class="index__kv__btn">
+					<NuxtLink to="/about" class="btn">深入了解</NuxtLink>
+				</div>
 			</div>
 		</section>
-		<!-- <section class="index__kv">
-			<Carousel>
-				<Slide key="kv1" class="kv1"></Slide>
-				<Slide key="kv2" class="kv2"></Slide>
-			</Carousel>
-			<div class="index__kv__content">
-				<h1 class="index__kv__title">與湧業能源<br />共創永續家園</h1>
-				<p class="index__kv__description">看不見的能源 看得見的改變</p>
-				<NuxtLink to="/about" class="index__kv__btn">深入了解</NuxtLink>
-			</div>
-		</section> -->
-		<!-- <transition-group tag="div" name="fade" class="container" mode="out-in">
-				<div
-					class="pic"
-					v-for="(item, index) in list"
-					v-show="index === active"
-					:style="getBackground(index)"
-					:key="item.id"
-				>
-					<h2>{{ item.text }}</h2>
-				</div>
-			</transition-group> -->
 		<section class="index__about">
 			<div class="index__about__info">
 				<div class="index__about__container">
 					<h2 class="index__about__title">最新消息</h2>
-					<transition name="fade">
-						<h3 class="index__about__subtitle" style="">
-							{{ nowAboutTitle }}
+					<!-- <Transition name="fade">
+						<h3 class="index__about__subtitle" :key="nowAboutTitle">
+							<span>{{ nowAboutTitle }}</span>
 						</h3>
-					</transition>
-					<transition name="fade">
-						<p class="index__about__text">
-							{{ nowAboutDescription }}
-						</p>
-					</transition>
-					<NuxtLink :to="nowAboutLink" class="index__about__link"
-						>瞭解更多></NuxtLink
+					</Transition> -->
+					<h3
+						class="index__about__subtitle"
+						@mouseover="stopAboutTimer"
+						@mouseleave="startAboutTimer"
 					>
+						{{ nowAboutTitle }}
+					</h3>
+					<p
+						class="index__about__text"
+						@mouseover="stopAboutTimer"
+						@mouseleave="startAboutTimer"
+					>
+						{{ nowAboutDescription }}
+					</p>
+					<NuxtLink :to="nowAboutLink" class="index__about__link"
+						>瞭解更多
+						<img
+							src="~/assets/img/index_about_arrow.png"
+							class="index__about__icon"
+						/>
+					</NuxtLink>
 					<ul class="index__about__pagination">
 						<li
 							class="index__about__pagination__item"
 							v-for="(item, index) in aboutData"
 							:key="item.id"
 							:class="{ active: index === aboutDataActive }"
-							@click="aboutDataActive = index"
+							@click="changeAboutDataActive(index)"
 						></li>
 					</ul>
 				</div>
 			</div>
 			<div class="index__about__pic">
-				<transition name="fade">
+				<Transition name="fade-about">
 					<div
 						class="index__about__image"
+						:key="nowAboutPath"
 						:style="{
 							backgroundImage: `url(${useAsset(nowAboutPath)})`,
 						}"
 					></div>
-				</transition>
+				</Transition>
 			</div>
 		</section>
 		<section class="index__service">
@@ -160,7 +158,9 @@ onMounted(() => {
 							<img src="~/assets/img/index_service_icon1.png" alt="申設流程" />
 						</div>
 						<h3 class="index__service__itemtitle">申設流程</h3>
+						<!-- 這邊之後會看文案決定 padding 左右 -->
 						<p class="index__service__itemtext">這裡可以放一點基本簡述說明</p>
+						<NuxtLink to="/service" class="index__service__itemlink"></NuxtLink>
 					</li>
 					<li class="index__service__item">
 						<div class="index__service__itempic">
@@ -171,6 +171,7 @@ onMounted(() => {
 						</div>
 						<h3 class="index__service__itemtitle">光電工程EPC</h3>
 						<p class="index__service__itemtext">這裡可以放一點基本簡述說明</p>
+						<NuxtLink to="/service" class="index__service__itemlink"></NuxtLink>
 					</li>
 					<li class="index__service__item">
 						<div class="index__service__itempic">
@@ -178,6 +179,7 @@ onMounted(() => {
 						</div>
 						<h3 class="index__service__itemtitle">施工維運</h3>
 						<p class="index__service__itemtext">這裡可以放一點基本簡述說明</p>
+						<NuxtLink to="/service" class="index__service__itemlink"></NuxtLink>
 					</li>
 					<li class="index__service__item">
 						<div class="index__service__itempic">
@@ -185,6 +187,7 @@ onMounted(() => {
 						</div>
 						<h3 class="index__service__itemtitle">電廠投資</h3>
 						<p class="index__service__itemtext">這裡可以放一點基本簡述說明</p>
+						<NuxtLink to="/service" class="index__service__itemlink"></NuxtLink>
 					</li>
 					<li class="index__service__item">
 						<div class="index__service__itempic">
@@ -192,6 +195,7 @@ onMounted(() => {
 						</div>
 						<h3 class="index__service__itemtitle">儲能系統</h3>
 						<p class="index__service__itemtext">這裡可以放一點基本簡述說明</p>
+						<NuxtLink to="/service" class="index__service__itemlink"></NuxtLink>
 					</li>
 				</ul>
 			</div>
@@ -253,13 +257,4 @@ onMounted(() => {
 	</div>
 </template>
 
-<style scoped>
-.fade-enter-active,
-.fade-leave-active {
-	transition: opacity 1s;
-}
-.fade-enter,
-.fade-leave-to {
-	opacity: 0;
-}
-</style>
+<style scoped lang="sass"></style>
