@@ -3,20 +3,12 @@
 	color: $color-white
 	font-size: .875rem
 	font-weight: 300
-	// +xxl 
-	// 	1500px
-	// +xl
-	// 	1199px
-	// +lg 
-	// 	1024px 
-	// +md 
-	// 	768px
-	// +sm 
-	// 	575px 
-	// +xs 
-	// 	420px
 	&__container
 		padding: 30px 16.6%
+		+xl 
+			padding: 30px 5%
+		+md 
+			padding: 32px 24px 45px
 	&__main
 		display: flex
 		flex-wrap: wrap
@@ -26,15 +18,26 @@
 		width: 32%
 		display: flex
 		flex-wrap: wrap
+		+md 
+			width: 100%
 		&__link
 			width: 33.33333%
 			color: $color-white
 			margin-bottom: 5px
+			+md 
+				margin-bottom: 15px
+			+sm 
+				width: auto
+				margin-right: 25px
 			&:hover
 				font-weight: 700
 	&__contact
 		padding-right: 5%
 		list-style: none
+		+md 
+			width: 100%
+			padding-right: 0
+			margin-top: 20px
 		&__item 
 			display: flex
 			margin-top: 12px
@@ -56,3 +59,7 @@
 			color: $color-white
 	&__copyright
 		transform: translateY(-12px)
+		+md 
+			transform: translateY(0px)
+			margin-top: 40px
+			text-align: center

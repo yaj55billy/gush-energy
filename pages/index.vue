@@ -2,6 +2,7 @@
 // import xxx from "@/components/xxx"
 import { ref, computed, onMounted } from "vue";
 import { useIndexAbout } from "@/composables/useIndexAbout.js";
+import { useIndexKv } from "@/composables/useIndexKv.js";
 
 const useAsset = (path) => {
 	const assetsImg = import.meta.glob("~/assets/img/\*", {
@@ -10,36 +11,17 @@ const useAsset = (path) => {
 	});
 	return assetsImg["/assets/img/" + path];
 };
-const kvData = ref([
-	{
-		id: "kv1",
-		path: "kv.jpg",
-	},
-	{
-		id: "kv2",
-		path: "kv_temp1.jpg",
-	},
-	{
-		id: "kv3",
-		path: "kv_temp2.jpg",
-	},
-]);
-const kvDataActive = ref(0);
-const nowKvData = computed(() => kvData.value[kvDataActive.value]);
-const nowKvPath = computed(() => nowKvData.value.path);
-let kvTimer = null;
-const changeKvDataActive = (index) => {
-	kvDataActive.value = (index + kvData.value.length) % kvData.value.length;
-	startKvTimer();
-};
-const kvTimerHandler = () => {
-	changeKvDataActive(kvDataActive.value + 1);
-	startKvTimer();
-};
-const startKvTimer = () => {
-	clearTimeout(kvTimer);
-	kvTimer = setTimeout(kvTimerHandler, 5000);
-};
+
+const {
+	kvData,
+	kvDataActive,
+	nowKvData,
+	nowKvPath,
+	kvTimer,
+	changeKvDataActive,
+	kvTimerHandler,
+	startKvTimer,
+} = useIndexKv();
 
 const {
 	aboutData,
@@ -55,8 +37,6 @@ const {
 	startAboutTimer,
 	stopAboutTimer,
 } = useIndexAbout();
-
-// index about
 
 onMounted(() => {
 	if (aboutData.value.length > 1) {
@@ -157,9 +137,10 @@ onUnmounted(() => {
 						<div class="index__service__itempic">
 							<img src="~/assets/img/index_service_icon1.png" alt="申設流程" />
 						</div>
-						<h3 class="index__service__itemtitle">申設流程</h3>
-						<!-- 這邊之後會看文案決定 padding 左右 -->
-						<p class="index__service__itemtext">這裡可以放一點基本簡述說明</p>
+						<div class="index__service__itemtextarea">
+							<h3 class="index__service__itemtitle">申設流程</h3>
+							<p class="index__service__itemtext">這裡可以放一點基本簡述說明</p>
+						</div>
 						<NuxtLink to="/service" class="index__service__itemlink"></NuxtLink>
 					</li>
 					<li class="index__service__item">
@@ -169,32 +150,40 @@ onUnmounted(() => {
 								alt="光電工程EPC"
 							/>
 						</div>
-						<h3 class="index__service__itemtitle">光電工程EPC</h3>
-						<p class="index__service__itemtext">這裡可以放一點基本簡述說明</p>
+						<div class="index__service__itemtextarea">
+							<h3 class="index__service__itemtitle">光電工程EPC</h3>
+							<p class="index__service__itemtext">這裡可以放一點基本簡述說明</p>
+						</div>
 						<NuxtLink to="/service" class="index__service__itemlink"></NuxtLink>
 					</li>
 					<li class="index__service__item">
 						<div class="index__service__itempic">
 							<img src="~/assets/img/index_service_icon3.png" alt="施工維運" />
 						</div>
-						<h3 class="index__service__itemtitle">施工維運</h3>
-						<p class="index__service__itemtext">這裡可以放一點基本簡述說明</p>
+						<div class="index__service__itemtextarea">
+							<h3 class="index__service__itemtitle">施工維運</h3>
+							<p class="index__service__itemtext">這裡可以放一點基本簡述說明</p>
+						</div>
 						<NuxtLink to="/service" class="index__service__itemlink"></NuxtLink>
 					</li>
 					<li class="index__service__item">
 						<div class="index__service__itempic">
 							<img src="~/assets/img/index_service_icon4.png" alt="電廠投資" />
 						</div>
-						<h3 class="index__service__itemtitle">電廠投資</h3>
-						<p class="index__service__itemtext">這裡可以放一點基本簡述說明</p>
+						<div class="index__service__itemtextarea">
+							<h3 class="index__service__itemtitle">電廠投資</h3>
+							<p class="index__service__itemtext">這裡可以放一點基本簡述說明</p>
+						</div>
 						<NuxtLink to="/service" class="index__service__itemlink"></NuxtLink>
 					</li>
 					<li class="index__service__item">
 						<div class="index__service__itempic">
 							<img src="~/assets/img/index_service_icon4.png" alt="儲能系統" />
 						</div>
-						<h3 class="index__service__itemtitle">儲能系統</h3>
-						<p class="index__service__itemtext">這裡可以放一點基本簡述說明</p>
+						<div class="index__service__itemtextarea">
+							<h3 class="index__service__itemtitle">儲能系統</h3>
+							<p class="index__service__itemtext">這裡可以放一點基本簡述說明</p>
+						</div>
 						<NuxtLink to="/service" class="index__service__itemlink"></NuxtLink>
 					</li>
 				</ul>

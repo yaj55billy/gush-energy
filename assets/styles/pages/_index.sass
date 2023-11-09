@@ -2,54 +2,29 @@
 // $color-blue-dark2:  #23293A !default 案例底部 btn
 // $color-blue-light:#445870 !default
 //$color-orange
+
+$xPaddingCount: 8% 
+$xPaddingCount1199: 5% 
+$xPaddingCount768: 24px
+
 .fade-about-enter-active,.fade-about-leave-active
 	transition: opacity .4s ease-in-out
 
 .fade-about-enter-from,.fade-about-leave-to
 	opacity: 0
 
-
-.scale-kv-enter-from
-	opacity: 0.95
-	transform: scale(1)
-	// ：进入动画的起始状态。在元素插入之前添加，在元素插入完成后的下一帧移除。
-
-.scale-kv-enter-active
-	transition: all 5s ease-in-out
-.scale-kv-enter-to
-	opacity: 1
-	transform: scale(1.1)
-	// 进入动画的结束状态。在元素插入完成后的下一帧被添加 (也就是 v-enter-from 被移除的同时)，在过渡或动画完成之后移除。
-
-.scale-kv-leave-from
-	opacity: 1
-	transform: scale(1.1)
-	//离开动画的起始状态。在离开过渡效果被触发时立即添加，在一帧后被移除。
-
-.scale-kv-leave-active
-	transition: all 5s ease-in-out
-
-.scale-kv-leave-to
+.scale-kv-enter-from,.scale-kv-leave-to
 	opacity: 0.95
 	transform: scale(1)
 
+.scale-kv-enter-active,.scale-kv-leave-active
+	transition: all 5s ease-in-out
 
-$xPaddingCount: 8% 
-$xPaddingCount1199: 5% 
-$xPaddingCount768: 24px
+.scale-kv-enter-to,.scale-kv-leave-from
+	opacity: 1
+	transform: scale(1.1)
+
 .index 
-	// +xxl 
-	// 	1500px
-	// +xl
-	// 	1199px
-	// +lg 
-	// 	1024px 
-	// +md 
-	// 	768px
-	// +sm 
-	// 	575px 
-	// +xs 
-	// 	420px
 	@keyframes kvImageFirst
 		0%
 			opacity: 0.95
@@ -98,27 +73,30 @@ $xPaddingCount768: 24px
 			justify-content: center
 			align-items: center
 			flex-direction: column
+			+md 
+				padding: 0 24px
 		&__title
 			font-size: 4rem
+			+md 
+				font-size: 3rem
+			+sm
+				font-size: 2rem
 		&__description
 			font-size: 2rem
 			margin-top: 24px
+			+md 
+				font-size: 1.5rem
+				margin-top: 12px
+			+sm 
+				font-size: 1.25rem
 		&__btn 
 			margin-top: 40px
+			+md 
+				margin-top: 25px
+			+sm 
+				width: 100%
 			
 	&__about
-		// +xxl 
-		// 	1500px
-		// +xl
-		// 	1199px
-		// +lg 
-		// 	1024px 
-		// +md 
-		// 	768px
-		// +sm 
-		// 	575px 
-		// +xs 
-		// 	420px
 		background-color: $color-blue-light
 		width: 100%
 		display: flex 
@@ -140,6 +118,8 @@ $xPaddingCount768: 24px
 		&__title
 			font-size: 2rem
 			color: $color-white
+			+sm 
+				font-size: 1.5rem
 		&__subtitle
 			font-size: 1.5rem
 			color: $color-white
@@ -147,6 +127,8 @@ $xPaddingCount768: 24px
 			position: relative
 			+md 
 				margin-top: 12px
+			+sm 
+				font-size: 1.125rem
 			span
 				position: absolute
 				top: 0
@@ -160,6 +142,8 @@ $xPaddingCount768: 24px
 			margin-top: 15px
 			+md 
 				margin-top: 12px
+			+sm 
+				font-size: .875rem
 		&__link
 			font-size: 1.125rem
 			color: $color-orange
@@ -218,8 +202,12 @@ $xPaddingCount768: 24px
 			color: $color-white
 			+xl 
 				padding: 75px $xPaddingCount1199 180px
+			+md 
+				padding: 45px $xPaddingCount768 75px
 		&__title
 			font-size: 2rem
+			+sm 
+				font-size: 1.5rem
 		&__text
 			font-size: 1.125rem
 		&__list 
@@ -231,6 +219,8 @@ $xPaddingCount768: 24px
 				flex-wrap: wrap
 				justify-content: center
 				margin-top: 35px
+			+md 
+				margin-top: 0
 		&__item
 			margin-right: 2.7%
 			width: calc(89.2% / 5) // 100 - (2.7*4)
@@ -244,6 +234,13 @@ $xPaddingCount768: 24px
 				width: 32%
 				margin-right: 2%
 				margin-top: 20px
+			+md 
+				width: 100%
+				margin-right: 0
+				margin-top: 32px
+				padding: 20px 24px 2px 12px
+				display: flex
+				align-items: flex-start
 			&:nth-child(3)
 				+lg 
 					margin-right: 0
@@ -259,9 +256,23 @@ $xPaddingCount768: 24px
 			margin: 0 auto
 			+xl 
 				width: 120px
+			+md 
+				margin: 0
+			+sm 
+				width: 100px
+		&__itemtextarea
+			+md
+				width: calc(100% - 120px)
+				text-align: left
+				margin-top: 7px
+				padding-left: 5px
+			+sm 
+				width: calc(100% - 100px)
 		&__itemtitle
 			font-size: 1.25rem
 			margin-top: -5px
+			+sm 
+				font-size: 1.125rem
 		&__itemtext 
 			font-size: .875rem
 			transition: color .4s ease-in-out
@@ -275,18 +286,6 @@ $xPaddingCount768: 24px
 			
 	&__case
 		background-color: $color-blue-dark2
-		// +xxl 
-		// 	1500px
-		// +xl
-		// 	1199px
-		// +lg 
-		// 	1024px 
-		// +md 
-		// 	768px
-		// +sm 
-		// 	575px 
-		// +xs 
-		// 	420px
 		&__main
 			list-style: none
 			display: flex
@@ -345,3 +344,5 @@ $xPaddingCount768: 24px
 		&__btn 
 			padding: 15px 0
 			text-align: center
+			+sm 
+				padding: 15px 24px

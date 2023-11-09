@@ -1,26 +1,135 @@
+// $color-blue-dark:  #283443 !default
+// $color-blue-dark2:  #23293A !default 案例底部 btn
+// $color-blue-light:#445870 !default
 .header
-	position: absolute
+	position: fixed
+	top: 0
+	left: 0
 	z-index: 100
 	width: 100%
-	padding: 15px 0 0 32px
+	padding: 32px 0 32px 32px
+	+md 
+		padding: 26px 0 24px 24px
+	&::after 
+		content: ''
+		position: absolute
+		top: -100%
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: $color-white
+		transition: all .4s ease-in-out
+		z-index: 1
+	&.scroll-active
+		&::after
+			top: 0
+		.header__logo--origin
+			opacity: 0
+		.header__logo--active
+			opacity: 1
+		.nav__menu__link
+			color: $color-blue-light
+			+md 
+				color: $color-white
+				opacity: .7
+				transition: opacity .4s ease-in-out
+				&:hover 
+					opacity: 1
+		.nav__menu__item
+			&::after 
+				background-color: $color-blue-light
+		.nav__toggle__line
+			background-color: $color-blue-light
 	&__content
 		display: flex
 		justify-content: space-between
 		align-items: center
+		position: relative
+		z-index: 2
 	&__logo
 		width: 160px
+		height: 47px
+		position: relative
+		&--origin,&--active
+			position: absolute
+			top: 0
+			left: 0 
+			transition: opacity .4s ease-in-out
+		&--origin 
+			opacity: 1 
+		&--active 
+			opacity: 0
 
 .nav 
 	&__toggle
 		display: none
+		position: relative
+		z-index: 50
+		+md 
+			display: block
+			padding-right: 24px
+			transform: translateY(-2px)
+		&__line
+			width: 30px
+			height: 3px
+			background-color: $color-white
+			border-radius: 100px
+			display: block
+			margin-top: 7px
+			transition: all .5s
+		&.active
+			.nav__toggle__line
+				background-color: $color-white
+			.nav__toggle__line:nth-child(1)
+				transform: translateY(10px) rotate(135deg)
+			.nav__toggle__line:nth-child(2)
+				opacity: 0
+				transform: translateX(30px)
+			.nav__toggle__line:nth-child(3)
+				transform: translateY(-10px) rotate(-135deg)
 	&__menu
-		&__link
+		+md 
+			position: fixed 
+			top: 0
+			left: 0
+			width: 100%
+			background-color: $color-blue-dark2
+			height: 0%
+			opacity: 0
+			visibility: hidden
+			transition: opacity .35s, visibility .35s, height .35s
+			overflow: hidden
+			&.active
+				height: 100%
+				opacity: 1
+				visibility: visible
+				.nav__menu__item
+					animation: headerFadeInRight .5s ease forwards
+					animation-delay: .35s
+					&:nth-of-type(2) 
+						animation-delay: .4s
+					&:nth-of-type(3) 
+						animation-delay: .45s
+					&:nth-of-type(4) 
+						animation-delay:	.50s
+					&:nth-of-type(5) 
+						animation-delay: .55s
+		&__list
+			list-style: none
+			display: flex 
+			+md 
+				flex-direction: column
+				width: 100%
+				transform: translateY(70px)
+		&__item 
 			position: relative
-			font-size: 0.875rem
-			font-weight: 400
-			color: $color-white
 			padding: 0 32px
-			text-decoration: none
+			+lg 
+				padding: 0 16px
+			+md 
+				opacity: 0
+				padding: 16px 24px 
+				text-align: center
 			&::after
 				content: ''
 				position: absolute
@@ -30,122 +139,28 @@
 				width: 1px
 				height: 16px
 				background-color: $color-white
+				+md 
+					display: none
 			&:last-child::after 
-				display: none				
+				display: none
+		&__link
+			font-size: 0.875rem
+			color: $color-white
+			text-decoration: none
+			opacity: .7
+			transition: opacity .3s
+			+md 
+				font-size: 1.5rem
+				display: block
 			&:hover 
-				font-weight: 700
+				opacity: 1
 
-//   position: fixed
-//   top: 0
-//   left: 0
-//   z-index: 100
-//   width: 100%
-//   padding: 8px 0
-//   -webkit-backdrop-filter: blur(10px)
-//   backdrop-filter: blur(10px)
-//   box-shadow: 0 0px 15px 5px rgba(0, 0, 0, 0.05)
-//   +md 
-//     padding: 0
-
-// .nav
-//   display: flex
-//   justify-content: space-between
-//   align-items: center
-//   &__brand
-//     font-family: $font-family-logo
-//     color: $color-primary-title
-//     margin-top: 0
-//     font-weight: 500
-//     font-size: 2.5rem
-//     position: relative
-//     &::after
-//       content: ''
-//       display: block
-//       position: absolute
-//       width: 100%
-//       bottom: 10px
-//       border-bottom: solid 5px $color-primary-title
-//   &__menu
-//     +md 
-//       position: absolute
-//       top: 67px
-//       width: 180px
-//       background-color: lighten($color-bgc, 10%)
-//       border: solid 2px $color-primary
-//       border-radius: 12px
-//       right: -100%
-//       transition: right .75s
-//       &.active
-//         right: 15px
-        
-//   &__list
-//     display: flex
-//     list-style: none
-//     +md 
-//       flex-wrap: wrap
-//       flex-direction: column
-//       padding: 10px
-      
-//   &__link
-//     padding: 4px 16px 
-//     margin-left: 12px
-//     display: block
-//     transition: color .5s
-//     overflow: hidden 
-//     position: relative
-//     +md 
-//       margin-left: 0
-//       padding: 8px 12px
-//       text-align: center
-      
-//     &::after
-//       content: ''
-//       display: block
-//       width: 100%
-//       height: 100%
-//       position: absolute
-//       z-index: -1
-//       left: -100%
-//       top: 0px
-//       background-color: $color-emphasis
-//       transition: left .5s
-//       +md 
-//         display: none
-//     &:hover, &.active 
-//       +md 
-//         background-color: $color-emphasis
-//       &::after
-//         left: 0%
-//   &__link--outer
-//     padding: 4px 16px 
-//     margin-left: 12px
-//     display: block
-//     color: darken($color-emphasis, 15%)
-//     border: solid 2px darken($color-emphasis, 15%)
-//     +md 
-//       margin-left: 0
-//       padding: 8px 12px
-//       text-align: center
-
-//   &__toggle
-//     display: none
-//     +md 
-//       display: block
-//     &__line
-//       width: 30px
-//       height: 3px
-//       background-color: $color-primary
-//       border-radius: 100px
-//       display: block
-//       margin-top: 7px
-//       transition: all .5s
-//     &.active
-//       .nav__toggle__line:nth-child(1)
-//         transform: translateY(10px) rotate(135deg)
-//       .nav__toggle__line:nth-child(2)
-//         opacity: 0
-//         transform: translateX(30px)
-//       .nav__toggle__line:nth-child(3)
-//         transform: translateY(-10px) rotate(-135deg)
+@keyframes headerFadeInRight 
+	0% 
+		opacity: 0
+		left: 20%
+	100% 
+		opacity: 0.7
+		left: 0
 
 
