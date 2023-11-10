@@ -1,0 +1,57 @@
+.card
+  display: flex
+  margin-top: 20px
+  padding: 25px
+  background-color: $color-secondary
+  transition: all .3s
+  +sm
+    flex-direction: column
+  &:hover 
+    background-color: lighten($color-secondary, 2%)
+  &__header
+    width: 45%
+    +sm
+      width: 100%
+  &__main
+    flex: 1
+    padding-left: 15px
+    position: relative
+    +sm
+      padding-left: 0
+  &__img
+    width: 100%
+    height: 0
+    padding-bottom: 50.5%
+    background-size: cover
+  &__title 
+    +sm
+      margin-top: .75rem
+  &__linkwrap 
+    position: absolute
+    bottom: 0
+    right: 0
+    +lg 
+      position: relative
+      bottom: auto 
+      right: auto
+      display: flex 
+      justify-content: flex-end
+  &__link 
+    display: block
+    width: 100px
+    margin-top: .75rem
+    padding: 6px 4px
+    text-align: center
+    background-color: $color-emphasis
+    transition: all .3s
+    &.none
+      display: none
+    &:hover
+      background-color: lighten($color-emphasis, 5%)
+  &__tags
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+  &__tag
+    font-size: 12px
+    margin-right: 6px

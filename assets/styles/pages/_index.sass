@@ -1,0 +1,348 @@
+// $color-blue-dark:  #283443 !default
+// $color-blue-dark2:  #23293A !default 案例底部 btn
+// $color-blue-light:#445870 !default
+//$color-orange
+
+$xPaddingCount: 8% 
+$xPaddingCount1199: 5% 
+$xPaddingCount768: 24px
+
+.fade-about-enter-active,.fade-about-leave-active
+	transition: opacity .4s ease-in-out
+
+.fade-about-enter-from,.fade-about-leave-to
+	opacity: 0
+
+.scale-kv-enter-from,.scale-kv-leave-to
+	opacity: 0.95
+	transform: scale(1)
+
+.scale-kv-enter-active,.scale-kv-leave-active
+	transition: all 5s ease-in-out
+
+.scale-kv-enter-to,.scale-kv-leave-from
+	opacity: 1
+	transform: scale(1.1)
+
+.index 
+	@keyframes kvImageFirst
+		0%
+			opacity: 0.95
+			transform: scale(1)
+		100%
+			opacity: 1
+			transform: scale(1.1)
+	&__kv
+		position: relative
+		color: $color-white
+		text-align: center
+		line-height: 1.25
+		&__pic 
+			width: 100%
+			height: 100vh
+			overflow: hidden
+			position: relative
+			&::after 
+				content: ''
+				display: block
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				opacity: 0.5
+				background: #23293A
+		&__image 
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background-position: center
+			background-size: cover 
+			animation-name: kvImageFirst
+			animation-duration: 5s
+			animation-fill-mode: forwards
+		&__container
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			display: flex
+			justify-content: center
+			align-items: center
+			flex-direction: column
+			+md 
+				padding: 0 24px
+		&__title
+			font-size: 4rem
+			+md 
+				font-size: 3rem
+			+sm
+				font-size: 2rem
+		&__description
+			font-size: 2rem
+			margin-top: 24px
+			+md 
+				font-size: 1.5rem
+				margin-top: 12px
+			+sm 
+				font-size: 1.25rem
+		&__btn 
+			margin-top: 40px
+			+md 
+				margin-top: 25px
+			+sm 
+				width: 100%
+			
+	&__about
+		background-color: $color-blue-light
+		width: 100%
+		display: flex 
+		+md 
+			flex-wrap: wrap
+			flex-direction: column-reverse
+		&__info
+			width: 50%
+			+md
+				width: 100%
+		&__container
+			padding: 70px $xPaddingCount*2
+			margin: 0 auto
+			+xl 
+				padding: 70px $xPaddingCount1199*2
+			+md 
+				padding: 32px $xPaddingCount768 50px
+				text-align: center
+		&__title
+			font-size: 2rem
+			color: $color-white
+			+sm 
+				font-size: 1.5rem
+		&__subtitle
+			font-size: 1.5rem
+			color: $color-white
+			margin-top: 60px
+			position: relative
+			+md 
+				margin-top: 12px
+			+sm 
+				font-size: 1.125rem
+			span
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+		&__text
+			font-size: 1.125rem
+			color: $color-white-500
+			line-height: 1.4
+			margin-top: 15px
+			+md 
+				margin-top: 12px
+			+sm 
+				font-size: .875rem
+		&__link
+			font-size: 1.125rem
+			color: $color-orange
+			margin-top: 32px
+			display: inline-block
+			transition: opacity .3s
+			+md 
+				margin-top: 20px
+			&:hover 
+				opacity: .9
+				.index__about__icon
+					transform: translateX(2px)
+		&__icon 
+			width: 9px
+			transition: transform .3s
+		&__pagination
+			display: flex 
+			flex-wrap: wrap
+			margin-top: 60px
+			list-style: none
+			+md 
+				margin-top: 40px
+				justify-content: center
+			&__item	
+				width: 10px
+				height: 10px
+				border: solid 1px #D9D9D9
+				border-radius: 20px
+				margin-right: 10px
+				cursor: pointer
+				&.active
+					background-color: $color-orange
+					border: solid 1px $color-orange
+					
+		&__pic
+			width: 50%
+			padding-bottom: 34% // 486/720 > 67.5% > 67.5/2
+			position: relative
+			+md
+				width: 100%
+				padding-bottom: 67.5%
+		&__image
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background-position: center
+			background-size: cover 
+	&__service
+		background: linear-gradient(to right, #283443, #445870)
+		&__container
+			padding: 75px $xPaddingCount 180px
+			margin: 0 auto
+			text-align: center
+			color: $color-white
+			+xl 
+				padding: 75px $xPaddingCount1199 180px
+			+md 
+				padding: 45px $xPaddingCount768 75px
+		&__title
+			font-size: 2rem
+			+sm 
+				font-size: 1.5rem
+		&__text
+			font-size: 1.125rem
+		&__list 
+			margin-top: 55px
+			list-style: none
+			display: flex 
+			justify-content: space-between
+			+lg 
+				flex-wrap: wrap
+				justify-content: center
+				margin-top: 35px
+			+md 
+				margin-top: 0
+		&__item
+			margin-right: 2.7%
+			width: calc(89.2% / 5) // 100 - (2.7*4)
+			background-color: #C0C9D4
+			padding: 25px 15px 45px
+			border-radius: 8px
+			box-shadow: 0px 4px 24px 0px rgba(255, 255, 255, 0.15)
+			transition: all .4s ease-in-out
+			position: relative
+			+lg 
+				width: 32%
+				margin-right: 2%
+				margin-top: 20px
+			+md 
+				width: 100%
+				margin-right: 0
+				margin-top: 32px
+				padding: 20px 24px 2px 12px
+				display: flex
+				align-items: flex-start
+			&:nth-child(3)
+				+lg 
+					margin-right: 0
+			&:last-child
+				margin-right: 0
+			&:hover 
+				background-color: $color-white
+				box-shadow: 0px 24px 36px 0px rgba(0, 0, 0, 0.50)
+				.index__service__itemtext
+					color: $color-blue-light
+		&__itempic
+			width: 150px
+			margin: 0 auto
+			+xl 
+				width: 120px
+			+md 
+				margin: 0
+			+sm 
+				width: 100px
+		&__itemtextarea
+			+md
+				width: calc(100% - 120px)
+				text-align: left
+				margin-top: 7px
+				padding-left: 5px
+			+sm 
+				width: calc(100% - 100px)
+		&__itemtitle
+			font-size: 1.25rem
+			margin-top: -5px
+			+sm 
+				font-size: 1.125rem
+		&__itemtext 
+			font-size: .875rem
+			transition: color .4s ease-in-out
+		&__itemlink
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+
+			
+	&__case
+		background-color: $color-blue-dark2
+		&__main
+			list-style: none
+			display: flex
+			+md 
+				flex-wrap: wrap
+		&__item
+			width: 33.33333%
+			+md 
+				width: 100%
+		&__image
+			width: 100%
+			height: 0
+			padding-bottom: 85% 
+			background-size: cover 
+			background-position: center 
+			position: relative
+			&::after 
+				content: ''
+				display: block
+				position: absolute
+				z-index: 1
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				opacity: 0
+				background-color: $color-black
+				transition: opacity .4s ease-in-out
+				+md 
+					opacity: .45
+			&:hover
+				&::after 
+					opacity: .65
+				.index__case__textarea
+					opacity: 1
+		&__textarea
+			position: absolute
+			z-index: 2
+			top: 50%
+			transform: translateY(-50%)
+			padding: 0 $xPaddingCount*3
+			text-align: center
+			transition: opacity .4s ease-in-out
+			opacity: 0
+			+xl 
+				padding: 0 $xPaddingCount1199*3
+			+md 
+				padding: 0 $xPaddingCount768
+				opacity: 1 
+		&__title
+			font-size: 1.125rem
+			color: $color-white
+		&__text
+			font-size: .875rem
+			color: $color-white-750
+		&__btn 
+			padding: 15px 0
+			text-align: center
+			+sm 
+				padding: 15px 24px
