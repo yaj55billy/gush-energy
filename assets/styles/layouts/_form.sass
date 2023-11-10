@@ -1,36 +1,44 @@
-// // /*-------------------------
-// //          F O R M S
-// // -------------------------*/
 
 // $formBorderColor: #ccc
 // $formBorderColorActive: #3ca
 // $formBorderColorFail: red
-// $formBorderRadius: 4px
 
 
-// $formPadding: 8px 15px
-
-// input,
-// input[type="text"],
 // input[type="checkbox"],
 // input[type="radio"],
-// input[type="email"],
-// input[type="password"],
-// textarea,
-// select 
-// 	border: solid 1px $formBorderColor
-// 	border-radius: $formBorderRadius
-// 	background-color: #fff
-// 	// @include text_set(16px, 500, #555)
-// 	font-family: "微軟正黑體", "Microsoft JhengHei"
-// 	// height: 40px
-// 	$formPadding: 8px 15px
-// 	transition: border 0.5s
-// 	box-sizing: border-box
+// input[type="password"],  
 
-// 	&::placeholder
-// 		color: #555
+$formPadding: 12px 15px
+$formBorderRadius: 6px
 
+input,
+input[type="text"],
+input[type="email"],
+textarea,
+select 
+	box-sizing: border-box
+	border: solid 1px $color-white
+	border-radius: $formBorderRadius
+	background-color: $color-white
+	font-size: .875rem
+	color: $color-blue-dark
+	font-family: $font-family-default
+	padding: $formPadding
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.01)
+	transition: border 0.4s ease-in-out
+	outline: none
+	&::placeholder
+		color: #C0C9D4
+		font-size: .75rem
+
+.form
+	&__item
+		margin-top: 12px
+	&__label 
+		display: block
+		font-size: .875rem
+		font-weight: 700
+		margin-bottom: 8px
 
 // 	&:hover,
 // 	&:focus,
@@ -39,17 +47,6 @@
 
 // 	&.fail  
 // 		border: solid 1px $formBorderColorActive
-
-
-// 	&[disabled] 
-// 		background-color: #ccc
-
-
-// 	&.none-arrow 
-// 		// 預設
-// 		-webkit-appearance: none
-// 		-moz-appearance: none
-// 		appearance: none
 
 
 // .form-wrap 
