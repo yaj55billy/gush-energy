@@ -1,15 +1,24 @@
 .contact
 	&__container 
-		max-width: 66.8%
+		max-width: 66.66666%
 		margin: 0 auto
+		+xl
+			max-width: 90%
+		+md 
+			max-width: 100%
+			padding: 0 24px
 	&__form
 		margin-top: 32px
 		&__content
 			width: 100%
 			display: flex
+			flex-wrap: wrap
+			+md 
+				flex-direction: column
 		&__col
 			flex: 1
-			border: solid 2px #000
 			&:nth-child(1)
 				margin-right: 2.2%
+				+md 
+					margin-right: 0
 				
