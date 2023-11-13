@@ -23,11 +23,12 @@ const handleSubmit = () => {
 
 <template>
 	<div class="page contact">
+		<PageKv
+			title="請填寫聯繫表單"
+			text="若你對我們有何想法或建議，歡迎連寫下方資訊供我們聯繫您"
+			picPath="qa_kv.jpg"
+		/>
 		<div class="contact__container">
-			<h2 class="page__title">請填寫聯繫表單</h2>
-			<p class="page__text">
-				若你對我們有何想法或建議，歡迎連寫下方資訊供我們聯繫您
-			</p>
 			<form @submit.prevent="handleSubmit" class="contact__form">
 				<div class="contact__form__content">
 					<div class="contact__form__col">

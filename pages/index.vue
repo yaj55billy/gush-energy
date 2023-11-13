@@ -1,16 +1,10 @@
 <script setup>
-// import xxx from "@/components/xxx"
 import { ref, computed, onMounted } from "vue";
 import { useIndexAbout } from "@/composables/useIndexAbout.js";
 import { useIndexKv } from "@/composables/useIndexKv.js";
+import { useAssetHandle } from "@/composables/useAssetHandle.js";
 
-const useAsset = (path) => {
-	const assetsImg = import.meta.glob("~/assets/img/\*", {
-		eager: true,
-		import: "default",
-	});
-	return assetsImg["/assets/img/" + path];
-};
+const { useAsset } = useAssetHandle();
 
 const {
 	kvData,

@@ -31,7 +31,23 @@ const leave = (el) => {
 			<h5 class="accordion__header__text">
 				{{ item.title }}
 			</h5>
-			<span class="accordion__header__arrow"></span>
+			<span class="accordion__header__arrow">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="30"
+					height="30"
+					viewBox="0 0 30 30"
+					fill="none"
+				>
+					<path
+						d="M22 12L15 19L8 12"
+						stroke="white"
+						stroke-width="3"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					/>
+				</svg>
+			</span>
 		</div>
 		<Transition
 			name="slide"

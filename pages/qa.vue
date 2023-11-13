@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import AccordionItem from "@/components/AccordionItem.vue";
+import PageKv from "@/components/PageKv.vue";
 
 const solarEnergyData = ref([
 	{
@@ -35,9 +36,12 @@ const changeCurrentHandle = (num) => {
 
 <template>
 	<div class="page qa">
+		<PageKv
+			title="常見問題"
+			text="還有更多問題嗎？可以看看我們的Q&A問答集"
+			picPath="qa_kv.jpg"
+		/>
 		<div class="qa__container">
-			<h2 class="page__title">常見問題</h2>
-			<p class="page__text">還有更多問題嗎？可以看看我們的Q&A問答集</p>
 			<div class="qa__content">
 				<ul>
 					<li
