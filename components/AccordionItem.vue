@@ -7,17 +7,13 @@ const props = defineProps({
 		type: Function,
 	},
 });
-const beforeEnter = (el) => {
-	el.style.height = "0";
-};
-const enter = (el) => {
+
+const startTransition = (el) => {
 	el.style.height = el.scrollHeight + "px";
 };
-const beforeLeave = (el) => {
-	el.style.height = el.scrollHeight + "px";
-};
-const leave = (el) => {
-	el.style.height = "0";
+
+const endTransition = (el) => {
+	el.style.height = "";
 };
 </script>
 
@@ -50,28 +46,24 @@ const leave = (el) => {
 			</span>
 		</div>
 		<Transition
-			name="slide"
-			@before-enter="beforeEnter"
-			@enter="enter"
-			@before-leave="beforeLeave"
-			@leave="leave"
+			name="accordion-item"
+			@enter="startTransition"
+			@after-enter="endTransition"
+			@before-leave="startTransition"
+			@after-leave="endTransition"
 		>
 			<div class="accordion__body" v-show="item.isOpen">
-				<p>
-					{{ item.content }}
-				</p>
+				<p v-text="item.content"></p>
 			</div>
 		</Transition>
 	</section>
 </template>
 
 <style scoped lang="sass">
-.slide-enter-active,.slide-leave-active
-  transition: all 0.4s ease-in-out
+.accordion-item-enter-active, .accordion-item-leave-active
+  will-change: height
+  transition: height 0.4s ease-in-out
 
-.slide-enter-from,.slide-leave-to
-  opacity: 0
-
-.slide-enter-to,.slide-leave-from
-  opacity: 1
+.accordion-item-enter-from, .accordion-item-leave-to
+  height: 0 !important
 </style>
