@@ -99,8 +99,11 @@ button
 
 .page
 	background-color: $color-page-bg
-	padding: 111px 0 80px
+	padding: 111px 0 0px
 	min-height: calc(100vh - 180px)
+	+md 
+		padding: 97px 0 0px
+		min-height: auto
 	&__title
 		text-align: center
 		color: $color-white
@@ -118,6 +121,14 @@ button
 		background-size: cover
 		background-position: center
 		position: relative
+		+lg
+			padding-bottom: 20.6%
+		+md 
+			padding-bottom: 25.6%
+		+sm 
+			padding-bottom: 41.6%
+		+xs 
+
 		&::before
 			content: ''
 			display: block
@@ -137,6 +148,8 @@ button
 			transform: translateY(-50%)
 			margin: auto
 			z-index: 2
+			+md 
+				padding: 0 24px
 
 		&__title
 			text-align: center
@@ -148,3 +161,5 @@ button
 			color: $color-white
 			font-size: .875rem
 			margin-top: 24px
+			+md 
+				margin-top: 16px

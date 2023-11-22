@@ -24,9 +24,9 @@ const handleSubmit = () => {
 <template>
 	<div class="page contact">
 		<PageKv
-			title="請填寫聯繫表單"
+			title="聯絡我們"
 			text="若你對我們有何想法或建議，歡迎連寫下方資訊供我們聯繫您"
-			picPath="qa_kv.jpg"
+			picPath="contact_kv.jpg"
 		/>
 		<div class="contact__container">
 			<form @submit.prevent="handleSubmit" class="contact__form">
@@ -73,7 +73,7 @@ const handleSubmit = () => {
 							<label for="contactContent" class="form__label">內容</label>
 							<textarea
 								cols="30"
-								rows="10"
+								rows="12"
 								name="contactContent"
 								id="contactContent"
 								class="form__control"
