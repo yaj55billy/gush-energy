@@ -53,7 +53,9 @@ const endTransition = (el) => {
 			@after-leave="endTransition"
 		>
 			<div class="accordion__body" v-show="item.isOpen">
-				<p v-text="item.content"></p>
+				<p>{{ item.content }}</p>
+				<p v-if="item.paragraph2">{{ item.paragraph2 }}</p>
+				<p v-if="item.paragraph3">{{ item.paragraph3 }}</p>
 			</div>
 		</Transition>
 	</section>

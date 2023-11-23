@@ -7,7 +7,11 @@ const solarEnergyData = ref([
 	{
 		title: "建置太陽能發電系統有什麼好處？",
 		content:
-			"設置太陽能發電系統具有多重好處，包括降低室內溫度、利用閒置空間獲取實質收入、減少碳足跡、提高企業形象等。<br/>躉售投資： 若與台電簽約20年，您將擁有持續穩定的年收益，通常可達8~12%的獲利，這是一個具有長期投資價值的選擇。<br/>自發自用： 太陽能系統提高了能源供應的可靠性，確保您在停電或緊急情況下仍能供應電力。同時，透過使用太陽能，您有助於減少碳排放，落實具體的減碳行動。",
+			"設置太陽能發電系統具有多重好處，包括降低室內溫度、利用閒置空間獲取實質收入、減少碳足跡、提高企業形象等。",
+		paragraph2:
+			"躉售投資： 若與台電簽約20年，您將擁有持續穩定的年收益，通常可達8~12%的獲利，這是一個具有長期投資價值的選擇。",
+		paragraph3:
+			"自發自用： 太陽能系統提高了能源供應的可靠性，確保您在停電或緊急情況下仍能供應電力。同時，透過使用太陽能，您有助於減少碳排放，落實具體的減碳行動。",
 		isOpen: true,
 	},
 	{
@@ -52,10 +56,10 @@ const toggleItemHandle = (index) => {
 	solarEnergyData.value[index].isOpen = !solarEnergyData.value[index].isOpen;
 };
 
-// about tab
-const currentContent = ref(0);
-const changeCurrentHandle = (num) => {
-	currentContent.value = num;
+// tab
+const qaCurrentContent = ref(1);
+const changeQaCurrentHandle = (num) => {
+	qaCurrentContent.value = num;
 };
 </script>
 
@@ -68,34 +72,41 @@ const changeCurrentHandle = (num) => {
 		/>
 		<div class="qa__container">
 			<div class="qa__content">
-				<ul>
+				<ul class="qa__content__head">
 					<li
-						@click="changeCurrentHandle(0)"
-						:class="{ active: currentContent === 0 }"
+						@click="changeQaCurrentHandle(1)"
+						:class="{ active: qaCurrentContent === 1 }"
+						class="qa__content__headitem"
 					>
 						太陽能系統設置
 					</li>
 					<li
-						@click="changeCurrentHandle(1)"
-						:class="{ active: currentContent === 1 }"
+						@click="changeQaCurrentHandle(2)"
+						:class="{ active: qaCurrentContent === 2 }"
+						class="qa__content__headitem"
 					>
 						其他系統
 					</li>
 					<li
-						@click="changeCurrentHandle(2)"
-						:class="{ active: currentContent === 2 }"
+						@click="changeQaCurrentHandle(3)"
+						:class="{ active: qaCurrentContent === 3 }"
+						class="qa__content__headitem"
 					>
-						其他系統2
+						其他系統
+					</li>
+					<li
+						@click="changeQaCurrentHandle(4)"
+						:class="{ active: qaCurrentContent === 4 }"
+						class="qa__content__headitem"
+					>
+						其他系統
 					</li>
 				</ul>
-				<div>
-					<section class="tab-content" v-show="currentContent === 0">
-						這是內容一<br />
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-						quo minus esse velit eveniet perferendis inventore vero ad nisi
-						ipsa. Obcaecati veniam fugit atque dolorem laborum dicta labore quia
-						deserunt?
-						<br />
+				<div class="qa__content__body">
+					<section
+						class="qa__content__bodysection"
+						v-show="qaCurrentContent === 1"
+					>
 						<div class="accordion">
 							<AccordionItem
 								:accordionData="solarEnergyData"
@@ -103,20 +114,47 @@ const changeCurrentHandle = (num) => {
 							/>
 						</div>
 					</section>
-					<section class="tab-content" v-show="currentContent === 1">
-						22222<br />
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error
-						molestias earum accusamus reprehenderit et! Id, eaque omnis rerum
-						dolor quis tempora, temporibus impedit blanditiis ducimus, quidem
-						debitis cumque fugiat eius.
+					<section
+						class="qa__content__bodysection"
+						v-show="qaCurrentContent === 2"
+					>
+						<div style="margin-top: 30px">
+							<h2 class="page__title">內容2</h2>
+							<p class="page__text">
+								Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+								Inventore velit veniam minus, iste nihil quas quibusdam, dicta
+								nisi omnis saepe sequi minima. Facilis, earum modi voluptate
+								quas reprehenderit non laboriosam!
+							</p>
+						</div>
 					</section>
-					<section class="tab-content" v-show="currentContent === 2">
-						33333<br />
-						33333<br />
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-						accusantium tempora reprehenderit quibusdam eius esse corrupti quia
-						placeat delectus. Ipsa tempora placeat vero vel excepturi fugit
-						quaerat reiciendis unde nemo?
+					<section
+						class="qa__content__bodysection"
+						v-show="qaCurrentContent === 3"
+					>
+						<div style="margin-top: 30px">
+							<h2 class="page__title">內容3</h2>
+							<p class="page__text">
+								Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+								Inventore velit veniam minus, iste nihil quas quibusdam, dicta
+								nisi omnis saepe sequi minima. Facilis, earum modi voluptate
+								quas reprehenderit non laboriosam!
+							</p>
+						</div>
+					</section>
+					<section
+						class="qa__content__bodysection"
+						v-show="qaCurrentContent === 4"
+					>
+						<div style="margin-top: 30px">
+							<h2 class="page__title">內容4</h2>
+							<p class="page__text">
+								Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+								Inventore velit veniam minus, iste nihil quas quibusdam, dicta
+								nisi omnis saepe sequi minima. Facilis, earum modi voluptate
+								quas reprehenderit non laboriosam!
+							</p>
+						</div>
 					</section>
 				</div>
 			</div>
