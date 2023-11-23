@@ -27,7 +27,7 @@ const endTransition = (el) => {
 			<h5 class="accordion__header__text">
 				{{ item.title }}
 			</h5>
-			<span class="accordion__header__arrow">
+			<span class="accordion__header__arrow" :class="{ active: item.isOpen }">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="30"
