@@ -72,36 +72,39 @@ const changeQaCurrentHandle = (num) => {
 		/>
 		<div class="qa__container">
 			<div class="qa__content">
-				<ul class="qa__content__head">
-					<li
-						@click="changeQaCurrentHandle(1)"
-						:class="{ active: qaCurrentContent === 1 }"
-						class="qa__content__headitem"
-					>
-						太陽能系統設置
-					</li>
-					<li
-						@click="changeQaCurrentHandle(2)"
-						:class="{ active: qaCurrentContent === 2 }"
-						class="qa__content__headitem"
-					>
-						其他系統
-					</li>
-					<li
-						@click="changeQaCurrentHandle(3)"
-						:class="{ active: qaCurrentContent === 3 }"
-						class="qa__content__headitem"
-					>
-						其他系統
-					</li>
-					<li
-						@click="changeQaCurrentHandle(4)"
-						:class="{ active: qaCurrentContent === 4 }"
-						class="qa__content__headitem"
-					>
-						其他系統
-					</li>
-				</ul>
+				<div class="qa__content__head">
+					<ul class="qa__content__headlist">
+						<li
+							@click="changeQaCurrentHandle(1)"
+							:class="{ active: qaCurrentContent === 1 }"
+							class="qa__content__headitem"
+						>
+							太陽能系統設置
+						</li>
+						<li
+							@click="changeQaCurrentHandle(2)"
+							:class="{ active: qaCurrentContent === 2 }"
+							class="qa__content__headitem"
+						>
+							其他系統
+						</li>
+						<li
+							@click="changeQaCurrentHandle(3)"
+							:class="{ active: qaCurrentContent === 3 }"
+							class="qa__content__headitem"
+						>
+							其他系統
+						</li>
+						<li
+							@click="changeQaCurrentHandle(4)"
+							:class="{ active: qaCurrentContent === 4 }"
+							class="qa__content__headitem"
+						>
+							其他系統
+						</li>
+					</ul>
+				</div>
+
 				<div class="qa__content__body">
 					<section
 						class="qa__content__bodysection"
