@@ -1,16 +1,10 @@
 <script setup>
-// import xxx from "@/components/xxx"
 import { ref, computed, onMounted } from "vue";
 import { useIndexAbout } from "@/composables/useIndexAbout.js";
 import { useIndexKv } from "@/composables/useIndexKv.js";
+import { useAssetHandle } from "@/composables/useAssetHandle.js";
 
-const useAsset = (path) => {
-	const assetsImg = import.meta.glob("~/assets/img/\*", {
-		eager: true,
-		import: "default",
-	});
-	return assetsImg["/assets/img/" + path];
-};
+const { useAsset } = useAssetHandle();
 
 const {
 	kvData,
@@ -138,8 +132,8 @@ onUnmounted(() => {
 							<img src="~/assets/img/index_service_icon1.png" alt="申設流程" />
 						</div>
 						<div class="index__service__itemtextarea">
-							<h3 class="index__service__itemtitle">申設流程</h3>
-							<p class="index__service__itemtext">這裡可以放一點基本簡述說明</p>
+							<h3 class="index__service__itemtitle">案件申請</h3>
+							<!-- <p class="index__service__itemtext">這裡可以放一點基本簡述說明</p> -->
 						</div>
 						<NuxtLink to="/service" class="index__service__itemlink"></NuxtLink>
 					</li>
@@ -152,7 +146,7 @@ onUnmounted(() => {
 						</div>
 						<div class="index__service__itemtextarea">
 							<h3 class="index__service__itemtitle">光電工程EPC</h3>
-							<p class="index__service__itemtext">這裡可以放一點基本簡述說明</p>
+							<!-- <p class="index__service__itemtext">這裡可以放一點基本簡述說明</p> -->
 						</div>
 						<NuxtLink to="/service" class="index__service__itemlink"></NuxtLink>
 					</li>
@@ -162,7 +156,7 @@ onUnmounted(() => {
 						</div>
 						<div class="index__service__itemtextarea">
 							<h3 class="index__service__itemtitle">施工維運</h3>
-							<p class="index__service__itemtext">這裡可以放一點基本簡述說明</p>
+							<!-- <p class="index__service__itemtext">這裡可以放一點基本簡述說明</p> -->
 						</div>
 						<NuxtLink to="/service" class="index__service__itemlink"></NuxtLink>
 					</li>
@@ -172,7 +166,7 @@ onUnmounted(() => {
 						</div>
 						<div class="index__service__itemtextarea">
 							<h3 class="index__service__itemtitle">電廠投資</h3>
-							<p class="index__service__itemtext">這裡可以放一點基本簡述說明</p>
+							<!-- <p class="index__service__itemtext">這裡可以放一點基本簡述說明</p> -->
 						</div>
 						<NuxtLink to="/service" class="index__service__itemlink"></NuxtLink>
 					</li>
@@ -182,7 +176,7 @@ onUnmounted(() => {
 						</div>
 						<div class="index__service__itemtextarea">
 							<h3 class="index__service__itemtitle">儲能系統</h3>
-							<p class="index__service__itemtext">這裡可以放一點基本簡述說明</p>
+							<!-- <p class="index__service__itemtext">這裡可以放一點基本簡述說明</p> -->
 						</div>
 						<NuxtLink to="/service" class="index__service__itemlink"></NuxtLink>
 					</li>
@@ -200,9 +194,11 @@ onUnmounted(() => {
 							}"
 						>
 							<div class="index__case__textarea">
-								<h3 class="index__case__title">地面型光電發電系統</h3>
+								<h3 class="index__case__title">屋頂平舖型</h3>
 								<p class="index__case__text">
-									湧業能源成功完成南部地區的一個MＷ地面型發電系統。該系統項目覆蓋面積達30平方公里，可以為當地居民提供乾淨、穩定的電力供應
+									雲林縣<br />
+									工廠<br />
+									13MW
 								</p>
 							</div>
 						</div>
@@ -215,9 +211,11 @@ onUnmounted(() => {
 							}"
 						>
 							<div class="index__case__textarea">
-								<h3 class="index__case__title">地面型光電發電系統</h3>
+								<h3 class="index__case__title">屋頂棚架型</h3>
 								<p class="index__case__text">
-									湧業能源成功完成南部地區的一個MＷ地面型發電系統。該系統項目覆蓋面積達30平方公里，可以為當地居民提供乾淨、穩定的電力供應
+									雲林縣<br />
+									工廠<br />
+									XXMW
 								</p>
 							</div>
 						</div>
@@ -230,9 +228,11 @@ onUnmounted(() => {
 							}"
 						>
 							<div class="index__case__textarea">
-								<h3 class="index__case__title">地面型光電發電系統</h3>
+								<h3 class="index__case__title">地面型</h3>
 								<p class="index__case__text">
-									湧業能源成功完成南部地區的一個MＷ地面型發電系統。該系統項目覆蓋面積達30平方公里，可以為當地居民提供乾淨、穩定的電力供應
+									XX縣<br />
+									XXX<br />
+									XXMW
 								</p>
 							</div>
 						</div>

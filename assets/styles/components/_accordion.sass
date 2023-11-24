@@ -1,0 +1,30 @@
+.accordion
+	&__item
+		margin-top: 24px
+		&:nth-child(1)
+			margin-top: 12px
+	&__header
+		background-color: $color-blue-light
+		border-radius: 8px
+		padding: 9px 12px
+		display: flex
+		align-items: center
+		cursor: pointer
+		&__text
+			color: $color-white
+			font-size: .875rem
+			font-weight: 400
+			flex: 1
+			padding-right: 15px
+		&__arrow 
+			width: 30px
+			height: 30px
+			transform: rotate(0deg)
+			transition: transform .4s
+			&.active
+				transform: rotate(-180deg)
+	&__body 
+		margin-top: 12px
+		color: $color-gray
+		font-size: .875rem
+		overflow: hidden

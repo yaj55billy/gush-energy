@@ -1,6 +1,20 @@
 <script setup>
 import { ref, computed, onMounted } from "vue";
+const route = useRoute();
 const headerActive = ref(false);
+
+const pagePathHandle = () => {
+	if (route.path === "/") {
+		// console.log("首頁");
+		headerActive.value = false; // 預設
+		window.addEventListener("scroll", scrollHandle, true);
+	} else {
+		// console.log("其他頁面");
+		headerActive.value = true;
+		window.removeEventListener("scroll", scrollHandle, true);
+	}
+};
+
 const scrollHandle = () => {
 	const wsY = window.scrollY;
 	if (wsY > 50) {
@@ -15,8 +29,15 @@ const navMenuToggle = () => {
 	isOpen.value = !isOpen.value;
 };
 
+watch(
+	() => route.path,
+	(newPath, oldPath) => {
+		pagePathHandle();
+	}
+);
+
 onMounted(() => {
-	window.addEventListener("scroll", scrollHandle, true);
+	pagePathHandle();
 });
 
 onUnmounted(() => {
@@ -74,6 +95,9 @@ onUnmounted(() => {
 							<NuxtLink to="/contact" class="nav__menu__link"
 								>聯絡我們</NuxtLink
 							>
+						</li>
+						<li class="nav__menu__item">
+							<NuxtLink to="/qa" class="nav__menu__link">常見問題</NuxtLink>
 						</li>
 					</ul>
 					<!-- @mouseover="mouseover" -->

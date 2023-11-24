@@ -63,46 +63,6 @@ body, html
 .h4, h4, .h5, h5, .h6, h6
 	// margin-top: 1.25rem
 
-// .h1, h1
-// 	font-size: $font-size-base * 3.5 
-// .h2, h2
-// 	font-size: $font-size-base * 3 
-// 	+lg 
-// 		font-size: $font-size-base * 2.5 
-// 	+sm 
-// 		font-size: $font-size-base * 2.0
-// .h3, h3
-// 	font-size: $font-size-base * 2
-// .h4, h4
-// 	font-size: $font-size-base * 1.75
-// 	+lg 
-// 		font-size: $font-size-base * 1.5 
-// 	+sm 
-// 		font-size: $font-size-base * 1.25
-// .h5, h5
-// 	font-size: $font-size-base * 1.5
-// 	+lg 
-// 		font-size: $font-size-base * 1.25 
-// 	+sm 
-// 		font-size: $font-size-base * 1.25
-// .h6, h6
-// 	font-size: $font-size-base * 1.25
-// p 
-// 	font-size: $font-size-base
-// 	font-weight: $font-weight-normal
-// 	color: $color-primary
-// 	margin-top: .75rem
-// strong 
-// 	font-weight: $font-weight-normal
-// 	color: $color-primary
-// a
-// 	font-size: $font-size-base
-// 	font-weight: $font-weight-normal
-// 	color: $color-primary
-// 	text-decoration: none
-// 	cursor: pointer
-// span 
-// 	color: $color-primary
 
 a 
 	text-decoration: none
@@ -124,11 +84,6 @@ img
 	max-width: 100%
 	height: auto
 
-// hr 
-// 	margin-top: 3rem
-// 	margin-bottom: 3rem
-// 	border: dashed 1px lighten($color-primary, 10%)
-
 button 
 	background: none 
 	border: none
@@ -141,3 +96,70 @@ button
 		padding: 0 20px
 	+md
 		padding: 0 15px
+
+.page
+	background-color: $color-page-bg
+	padding: 111px 0 0px
+	min-height: calc(100vh - 180px)
+	+md 
+		padding: 97px 0 0px
+		min-height: auto
+	&__title
+		text-align: center
+		color: $color-white
+		font-size: 1.5rem
+		line-height: 1.25
+	&__text 
+		text-align: center
+		color: $color-white
+		font-size: .875rem
+		margin-top: 24px
+	&__kv
+		width: 100%
+		height: 0
+		padding-bottom: 15.6%
+		background-size: cover
+		background-position: center
+		position: relative
+		+lg
+			padding-bottom: 20.6%
+		+md 
+			padding-bottom: 25.6%
+		+sm 
+			padding-bottom: 41.6%
+		+xs 
+
+		&::before
+			content: ''
+			display: block
+			width: 100%
+			height: 100%
+			position: absolute
+			top: 0
+			left: 0
+			opacity: 0.75
+			background-color: #000
+			z-index: 1
+		&__content 
+			position: absolute
+			left: 0
+			right: 0
+			top: 50%
+			transform: translateY(-50%)
+			margin: auto
+			z-index: 2
+			+md 
+				padding: 0 24px
+
+		&__title
+			text-align: center
+			color: $color-white
+			font-size: 1.5rem
+			line-height: 1.25
+		&__text 
+			text-align: center
+			color: $color-white
+			font-size: .875rem
+			margin-top: 24px
+			+md 
+				margin-top: 16px

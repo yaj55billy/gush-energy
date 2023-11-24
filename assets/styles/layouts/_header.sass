@@ -98,7 +98,7 @@
 			opacity: 0
 			visibility: hidden
 			transition: opacity .35s, visibility .35s, height .35s
-			overflow: hidden
+			overflow: auto
 			&.active
 				height: 100%
 				opacity: 1
@@ -114,6 +114,8 @@
 						animation-delay:	.50s
 					&:nth-of-type(5) 
 						animation-delay: .55s
+					&:nth-of-type(6) 
+						animation-delay: .60s
 		&__list
 			list-style: none
 			display: flex 
@@ -121,6 +123,7 @@
 				flex-direction: column
 				width: 100%
 				transform: translateY(70px)
+				
 		&__item 
 			position: relative
 			padding: 0 32px

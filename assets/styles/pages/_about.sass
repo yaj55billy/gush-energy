@@ -1,0 +1,168 @@
+.about
+	&__vision
+		&__container
+			max-width: 68.4%
+			margin: 0 auto
+			padding: 50px 0 55px
+			+xl
+				max-width: 90%
+			+md 
+				max-width: 100%
+				padding: 50px 24px 55px
+		&__text
+			font-size: 1rem
+			color: $color-gray
+			text-align: center
+			margin-top: 16px
+			+md 
+				font-size: .875rem 
+				text-align: justify
+		&__pic
+			margin-top: 32px
+	&__features
+		background-color: $color-blue-dark3
+		&__container
+			max-width: 68.4%
+			margin: 0 auto
+			padding: 50px 0 55px
+			+xl 
+				max-width: 90%
+			+md 
+				max-width: 100%
+				padding: 50px 24px 55px
+		&__content
+			display: flex 
+			flex-wrap: wrap
+			align-items: center
+			position: relative
+			+md 
+				flex-direction: column
+		&__mark 
+			position: absolute
+			z-index: 1
+			top: 50%
+			transform: translateY(-50%)
+			right: 0
+			font-weight: 700
+			line-height: 1
+			color: $color-blue-dark3
+			opacity: .25
+			text-shadow: 1px 0 0 $color-gray, -1px 0 0 $color-gray, 0 1px 0 $color-gray, 0 -1px 0 $color-gray
+			+md 
+				left: 0
+				right: 0
+				text-align: center
+				margin: auto
+				font-size: 40vmax
+		&__head
+			width: 30%
+			height: 0
+			padding-bottom: 30%
+			margin-right: 5%
+			position: relative
+			z-index: 2
+			// background-color: rgba(255,255,255, .4)
+			+lg 
+				width: 38%
+				padding-bottom: 38%
+			+md 
+				width: 50%
+				padding-bottom: 50%
+				margin-right: 0
+			+sm 
+				width: 80%
+				padding-bottom: 80%
+		&__headlist 
+			position: absolute
+			left: 0
+			right: 0
+			top: 50%
+			margin: auto
+			width: 80%
+			display: flex
+			flex-wrap: wrap
+			transform: translateY(-50%) rotate(45deg)
+			list-style: none
+		&__headitem 
+			width: 42%
+			height: 0
+			padding-bottom: 42%
+			margin: 4%
+			background-color: $color-blue-light
+			border-radius: 16px
+			text-align: center
+			position: relative
+			transition: all .4s
+			&:nth-child(1)
+				order: 0
+			&:nth-child(2)
+				order: 2
+			&:nth-child(3)
+				order: 1
+			&:nth-child(4)
+				order: 3
+			&:hover, &.active
+				background-color: $color-orange
+				.about__features__headnum
+					color: $color-white
+					text-shadow: none
+		&__headcontent
+			position: absolute
+			left: -5%
+			right: 0
+			top: 45%
+			transform: translateY(-50%) rotate(-45deg)
+			margin: auto
+		&__headnum
+			display: block
+			font-size: 2.25rem
+			font-weight: 700
+			line-height: 1.25
+			color: $color-blue-light
+			text-shadow: 1px 0 0 $color-white-500, -1px 0 0 $color-white-500, 0 1px 0 $color-white-500, 0 -1px 0 $color-white-500
+		&__headtitle
+			display: block
+			color: $color-white
+			font-size: .875rem
+		&__body 
+			position: relative
+			z-index: 2
+			flex: 1
+		&__bodycontent
+			margin-top: -45px
+			+md 
+				margin-top: 24px
+		&__bodytitle
+			text-align: left 
+			+md 
+				text-align: center
+		&__bodytext
+			color: $color-gray
+			font-size: .875rem
+			margin-top: 16px
+			width: 90%
+			+md 
+				width: 100%
+
+	&__cooperate
+		&__container
+			max-width: 68.4%
+			margin: 0 auto
+			padding: 50px 0 55px
+			+xl 
+				max-width: 90%
+			+md 
+				padding: 50px 24px 55px
+		&__list
+			list-style: none
+			display: flex 
+			flex-wrap: wrap
+		&__item
+			width: 16.66667%
+			text-align: center
+			margin-top: 32px
+			+md 
+				width: 33.33333%
+				margin-top: 16px
+			+sm 
+				width: 50%
