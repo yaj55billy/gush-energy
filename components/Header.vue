@@ -96,6 +96,9 @@ onUnmounted(() => {
 								>聯絡我們</NuxtLink
 							>
 						</li>
+						<li class="nav__menu__item">
+							<NuxtLink to="/qa" class="nav__menu__link">常見問題</NuxtLink>
+						</li>
 					</ul>
 					<!-- @mouseover="mouseover" -->
 					<!-- <div class="nav__submenu">
