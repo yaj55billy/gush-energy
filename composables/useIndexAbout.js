@@ -4,11 +4,11 @@ export function useIndexAbout() {
 	const aboutData = ref([
 		{
 			id: "about1",
-			title: "湧業能源與企業合作",
+			title: "湧業能源雲林光電維運案",
 			description:
-				"湧業能源與電力將會聯手合作，在未來的3年內共同打造5個發電廠，並將整合相關技術以達到2050淨零排碳的目標",
+				"湧業能源於2023年7月承攬雲林地區著名製造業工廠13MＷ光電維運案",
 			link: "/about",
-			path: "pic1.jpg",
+			path: "index_news_pic1.jpg",
 		},
 		{
 			id: "about2",
