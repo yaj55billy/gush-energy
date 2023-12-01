@@ -1,0 +1,143 @@
+.service
+	&__info 
+		&__container 
+			max-width: 72.5%
+			margin: 0 auto
+			padding: 50px 0 55px // temp
+			+xl
+				max-width: 90%
+			+md 
+				max-width: 100%
+				padding: 50px 24px 55px // temp
+		&__list
+			list-style: none
+			display: flex
+			flex-wrap: wrap
+			justify-content: center
+		&__item
+			width: 31.8% // 332/(1440-198-198)
+			margin-right: 2.3%
+			background-color: $color-blue-dark4
+			&:nth-child(2n+3)
+				margin-right: 0
+		&__itemtitle
+			font-size: 1.125rem
+			font-weight: 700 
+			color: $color-white
+		&__itemtext
+			color: $color-white-500
+			font-size: .875rem
+			margin-top: 5px
+	&__epc
+		width: 100%
+		height: 0
+		padding-bottom: 26.1%
+		background-image: url('~/assets/img/service_epc_bg.jpg')
+		background-size: cover 
+		background-position: center
+		position: relative
+		+xl 
+			height: auto
+			padding-bottom: 0
+		&::after 
+			content: ''
+			position: absolute
+			z-index: 1
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background-color: rgba(0,0,0, .75)
+		&__container
+			position: relative
+			z-index: 2
+			max-width: 65.55%
+			margin: 0 auto
+			padding: 90px 0 125px
+			+xl 
+				max-width: 90%
+				padding: 125px 0 
+		&__info 
+			width: 50%
+		&__title 
+			text-align: left
+		&__text 
+			font-size: .875rem
+			color: $color-white-750
+			margin-top: 30px
+			
+	&__apply
+		&__container
+			width: 37.5%
+			margin: 0 auto
+			padding: 50px 0 // temp
+			+xl 
+				width: 90%
+		&__content
+			position: relative
+		&__line
+			position: absolute
+			width: 100%
+			height: 85%
+			top: 50%
+			transform: translateY(-50%)
+			left: 0
+			right: 0
+			margin: auto
+			z-index: 1
+		&__list
+			position: relative
+			z-index: 2
+			list-style: none
+			display: flex 
+			flex-wrap: wrap
+			justify-content: center
+		
+		&__item
+			width: 24.25%
+			margin-right: 12.7%
+			padding: 36px 0
+			&:nth-child(3n)
+				margin-right: 0
+		&__body 
+			width: 100%
+			height: 0
+			padding-bottom: 100%
+			background-color: $color-blue-light
+			border-radius: 100%
+			position: relative
+		&__icon
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			left: 0
+			right: 0
+			margin: auto
+			width: 55px
+		&__num
+			display: flex
+			justify-content: center
+			align-items: center
+			font-size: 1.5rem 
+			font-weight: 700
+			width: 47px // temp
+			height: 47px // temp
+			background-color: #25303D
+			border-radius: 99em
+			position: absolute
+			color: #25303D
+			text-shadow: 2px 0 0 $color-white, -2px 0 0 $color-white, 0 2px 0 $color-white, 0 -2px 0 $color-white
+
+		&__head
+			text-align: center
+			font-size: 1rem
+			font-weight: 700
+			color: $color-white
+			margin-top: -16px
+			position: relative
+	&__work 
+		background-color: $color-blue-dark4
+		&__container 
+			max-width: 65.55%
+			margin: 0 auto
+			
