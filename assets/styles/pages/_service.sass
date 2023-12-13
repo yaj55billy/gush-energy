@@ -1,33 +1,5 @@
 .service
-	&__info 
-		&__container 
-			max-width: 72.5%
-			margin: 0 auto
-			padding: 50px 0 55px // temp
-			+xl
-				max-width: 90%
-			+md 
-				max-width: 100%
-				padding: 50px 24px 55px // temp
-		&__list
-			list-style: none
-			display: flex
-			flex-wrap: wrap
-			justify-content: center
-		&__item
-			width: 31.8% // 332/(1440-198-198)
-			margin-right: 2.3%
-			background-color: $color-blue-dark4
-			&:nth-child(2n+3)
-				margin-right: 0
-		&__itemtitle
-			font-size: 1.125rem
-			font-weight: 700 
-			color: $color-white
-		&__itemtext
-			color: $color-white-500
-			font-size: .875rem
-			margin-top: 5px
+	
 	&__epc
 		width: 100%
 		height: 0
@@ -39,6 +11,8 @@
 		+xl 
 			height: auto
 			padding-bottom: 0
+		+md 
+			background-image: url('~/assets/img/service_epc_bg_m.jpg')
 		&::after 
 			content: ''
 			position: absolute
@@ -57,15 +31,23 @@
 			+xl 
 				max-width: 90%
 				padding: 125px 0 
+			+md 
+				max-width: 100%
+				padding: 70px 24px 130px
 		&__info 
 			width: 50%
+			+md 
+				width: 100%
 		&__title 
 			text-align: left
+			+md 
+				text-align: center
 		&__text 
 			font-size: .875rem
 			color: $color-white-750
 			margin-top: 30px
-			
+			+md 
+				text-align: center
 	&__apply
 		&__container
 			width: 37.5%
@@ -78,9 +60,9 @@
 		&__line
 			position: absolute
 			width: 100%
-			height: 85%
-			top: 50%
-			transform: translateY(-50%)
+			height: 100%
+			top: 0
+			bottom: 0
 			left: 0
 			right: 0
 			margin: auto
@@ -99,6 +81,7 @@
 			padding: 36px 0
 			&:nth-child(3n)
 				margin-right: 0
+				
 		&__body 
 			width: 100%
 			height: 0
@@ -106,6 +89,9 @@
 			background-color: $color-blue-light
 			border-radius: 100%
 			position: relative
+			transition: all .3s
+			&:hover
+				box-shadow: 0px 25px 25px 0px rgba(0, 0, 0, 0.5)
 		&__icon
 			position: absolute
 			top: 50%
@@ -113,7 +99,7 @@
 			left: 0
 			right: 0
 			margin: auto
-			width: 55px
+			width: 49%
 		&__num
 			display: flex
 			justify-content: center
@@ -140,4 +126,51 @@
 		&__container 
 			max-width: 65.55%
 			margin: 0 auto
-			
+			padding: 60px 0 105px
+			+xl 
+				max-width: 90%
+			+md 
+				max-width: 100%
+				padding: 48px 0
+		&__content
+			display: flex 
+			flex-wrap: wrap
+			+md 
+				flex-direction: column
+		&__contentinfo
+			flex: 1 
+			margin-right: 8.8%
+			+lg 
+				margin-right: 5%
+			+md 
+				margin-right: 0
+				padding: 0 24px
+		&__contentpic
+			flex: 1
+			+md 
+				margin-top: 24px
+			img 
+				width: 100%
+				height: 230px
+				object-fit: cover
+				+md 
+					height: 330px
+				+sm 
+					height: 270px
+				+xs 
+					height: 200px
+		&__title
+			text-align: left
+			+md 
+				text-align: center
+		&__text
+			margin-top: 35px
+			color: $color-white-750
+			+md 
+				margin-top: 24px
+		&__video
+			width: 100%
+		&__videoframe
+			margin-top: 95px
+			+md 
+				margin-top: 24px
