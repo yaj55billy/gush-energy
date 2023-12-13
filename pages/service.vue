@@ -55,10 +55,6 @@ onUnmounted(() => {
 			<div class="service__apply__container">
 				<h2 class="page__title">申請流程</h2>
 				<div class="service__apply__content">
-					<!-- :style="{
-							width: serviceApplyLineWidth,
-							height: serviceApplyLineHeight,
-						}" -->
 					<svg
 						class="service__apply__line"
 						ref="serviceApplyLine"
@@ -79,16 +75,23 @@ onUnmounted(() => {
 						<li class="service__apply__item" ref="serviceApplyItem">
 							<div class="service__apply__body">
 								<div class="service__apply__icon">
-									<img src="~/assets/img/service_apply_icon1.png" alt="" />
+									<img
+										src="~/assets/img/service_apply_icon1.png"
+										alt="現地勘查"
+									/>
 								</div>
 								<span class="service__apply__num">1</span>
+								<span class="service__apply__start">START</span>
 							</div>
 							<h5 class="service__apply__head">現地勘查</h5>
 						</li>
 						<li class="service__apply__item">
 							<div class="service__apply__body">
 								<div class="service__apply__icon">
-									<img src="~/assets/img/service_apply_icon2.png" alt="" />
+									<img
+										src="~/assets/img/service_apply_icon2.png"
+										alt="設計規劃"
+									/>
 								</div>
 								<span class="service__apply__num">2</span>
 							</div>
@@ -97,16 +100,56 @@ onUnmounted(() => {
 						<li class="service__apply__item">
 							<div class="service__apply__body">
 								<div class="service__apply__icon">
-									<img src="~/assets/img/service_apply_icon3.png" alt="" />
+									<img src="~/assets/img/service_apply_icon3.png" alt="簽約" />
 								</div>
 								<span class="service__apply__num">3</span>
+								<svg
+									class="service__apply__arrow"
+									xmlns="http://www.w3.org/2000/svg"
+									width="33"
+									height="22"
+									viewBox="0 0 33 22"
+									fill="none"
+								>
+									<path
+										d="M33 1.58349e-06L27.2359 0.329821L30.4036 5.15675L33 1.58349e-06ZM1.27433 21.418L2.87433 20.368L2.32567 19.532L0.725672 20.582L1.27433 21.418ZM6.07433 18.268L9.27433 16.168L8.72567 15.332L5.52567 17.432L6.07433 18.268ZM12.4743 14.068L15.6743 11.968L15.1257 11.132L11.9257 13.232L12.4743 14.068ZM18.8743 9.86803L22.0743 7.76803L21.5257 6.93198L18.3257 9.03198L18.8743 9.86803ZM25.2743 5.66802L28.4743 3.56803L27.9257 2.73198L24.7257 4.83198L25.2743 5.66802ZM33 1.58349e-06L21.4719 0.659641L27.8072 10.3135L33 1.58349e-06ZM1.54866 21.836L3.14866 20.786L2.05134 19.114L0.451344 20.164L1.54866 21.836ZM6.34866 18.686L9.54866 16.586L8.45134 14.914L5.25134 17.014L6.34866 18.686ZM12.7487 14.486L15.9487 12.386L14.8513 10.714L11.6513 12.814L12.7487 14.486ZM19.1487 10.286L22.3487 8.18605L21.2513 6.51395L18.0513 8.61395L19.1487 10.286ZM25.5487 6.08605L28.7487 3.98605L27.6513 2.31395L24.4513 4.41395L25.5487 6.08605Z"
+										fill="#FB910B"
+									/>
+								</svg>
+								<svg
+									class="service__apply__arrow--m"
+									xmlns="http://www.w3.org/2000/svg"
+									width="12"
+									height="19"
+									viewBox="0 0 12 19"
+									fill="none"
+								>
+									<path
+										d="M6 -7.7486e-07L3.11325 5L8.88675 5L6 -7.7486e-07ZM6.5 19L6.5 18.05L5.5 18.05L5.5 19L6.5 19ZM6.5 16.15L6.5 14.25L5.5 14.25L5.5 16.15L6.5 16.15ZM6.5 12.35L6.5 10.45L5.5 10.45L5.5 12.35L6.5 12.35ZM6.5 8.55L6.5 6.65L5.5 6.65L5.5 8.55L6.5 8.55ZM6.5 4.75L6.5 2.85L5.5 2.85L5.5 4.75L6.5 4.75ZM6 -7.7486e-07L0.226498 10L11.7735 10L6 -7.7486e-07ZM7 19L7 18.05L5 18.05L5 19L7 19ZM7 16.15L7 14.25L5 14.25L5 16.15L7 16.15ZM7 12.35L7 10.45L5 10.45L5 12.35L7 12.35ZM7 8.55L7 6.65L5 6.65L5 8.55L7 8.55ZM7 4.75L7 2.85L5 2.85L5 4.75L7 4.75Z"
+										fill="#FB910B"
+									/>
+								</svg>
+								<div class="service__apply__extend">
+									<div class="service__apply__extendbody">
+										<div class="service__apply__extendicon">
+											<img
+												src="~/assets/img/service_apply_icon3.png"
+												alt="送件"
+											/>
+										</div>
+									</div>
+									<h6 class="service__apply__extendhead">送件</h6>
+								</div>
 							</div>
 							<h5 class="service__apply__head">簽約</h5>
 						</li>
 						<li class="service__apply__item">
 							<div class="service__apply__body">
 								<div class="service__apply__icon">
-									<img src="~/assets/img/service_apply_icon4.png" alt="" />
+									<img
+										src="~/assets/img/service_apply_icon4.png"
+										alt="施工規劃"
+									/>
 								</div>
 								<span class="service__apply__num">4</span>
 							</div>
@@ -115,7 +158,10 @@ onUnmounted(() => {
 						<li class="service__apply__item">
 							<div class="service__apply__body">
 								<div class="service__apply__icon">
-									<img src="~/assets/img/service_apply_icon5.png" alt="" />
+									<img
+										src="~/assets/img/service_apply_icon5.png"
+										alt="工程施工"
+									/>
 								</div>
 								<span class="service__apply__num">5</span>
 							</div>
@@ -124,7 +170,10 @@ onUnmounted(() => {
 						<li class="service__apply__item">
 							<div class="service__apply__body">
 								<div class="service__apply__icon">
-									<img src="~/assets/img/service_apply_icon6.png" alt="" />
+									<img
+										src="~/assets/img/service_apply_icon6.png"
+										alt="併聯掛錶"
+									/>
 								</div>
 								<span class="service__apply__num">6</span>
 							</div>
@@ -133,7 +182,7 @@ onUnmounted(() => {
 						<li class="service__apply__item">
 							<div class="service__apply__body">
 								<div class="service__apply__icon">
-									<img src="~/assets/img/service_apply_icon7.png" alt="" />
+									<img src="~/assets/img/service_apply_icon7.png" alt="O&M" />
 								</div>
 								<span class="service__apply__num">7</span>
 							</div>
@@ -142,7 +191,7 @@ onUnmounted(() => {
 						<li class="service__apply__item">
 							<div class="service__apply__body">
 								<div class="service__apply__icon">
-									<img src="~/assets/img/service_apply_icon8.png" alt="" />
+									<img src="~/assets/img/service_apply_icon8.png" alt="驗收" />
 								</div>
 								<span class="service__apply__num">8</span>
 							</div>
@@ -151,9 +200,13 @@ onUnmounted(() => {
 						<li class="service__apply__item">
 							<div class="service__apply__body">
 								<div class="service__apply__icon">
-									<img src="~/assets/img/service_apply_icon9.png" alt="" />
+									<img
+										src="~/assets/img/service_apply_icon9.png"
+										alt="保固維運"
+									/>
 								</div>
 								<span class="service__apply__num">9</span>
+								<span class="service__apply__end">END</span>
 							</div>
 							<h5 class="service__apply__head">保固維運</h5>
 						</li>
