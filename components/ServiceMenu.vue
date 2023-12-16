@@ -1,60 +1,103 @@
 <script setup>
+import { ref } from "vue";
+import { useServiceStore } from "@/stores/useService.js";
+import { useAssetHandle } from "@/composables/useAssetHandle.js";
+
+const store = useServiceStore();
+const { useAsset } = useAssetHandle();
+const router = useRouter();
 const route = useRoute();
-console.log(route.name);
+const nowPage = ref("");
 if (route.name === "index") {
-	console.log("首頁");
+	nowPage.value = "index";
 }
 if (route.name === "service") {
-	console.log("服務項目");
+	nowPage.value = "service";
 }
+
+const props = defineProps({
+	serviceEpc: {
+		type: Object,
+	},
+});
+
+const isMobileDevice = () => {
+	let mobileDevices = [
+		"Android",
+		"webOS",
+		"iPhone",
+		"iPad",
+		"iPod",
+		"BlackBerry",
+		"Windows Phone",
+	];
+	for (var i = 0; i < mobileDevices.length; i++) {
+		if (navigator.userAgent.match(mobileDevices[i])) {
+			return true;
+		}
+	}
+	return false;
+};
+
+const scrollToTarget = (targetElement) => {
+	if (targetElement) {
+		targetElement.scrollIntoView({
+			behavior: "smooth",
+			block: "center",
+		});
+	}
+};
+
+const serviceClickHandle = (index) => {
+	store.activeServiceChange(index);
+	if (isMobileDevice()) {
+		scrollToTarget(props.serviceEpc);
+	}
+};
+const serviceMousemoveHandle = (index) => {
+	if (isMobileDevice()) {
+		return false;
+	} else {
+		store.activeServiceChange(index);
+	}
+};
+const indexServiceClickHandle = (index) => {
+	store.activeServiceChange(index);
+	router.push("/service");
+};
 </script>
 
 <template>
 	<ul class="service__list">
-		<li class="service__item">
+		<li
+			class="service__item"
+			v-for="(item, index) in store.services"
+			:class="{
+				active: store.activeServiceIndex === index && nowPage === 'service',
+			}"
+			:key="item.id"
+		>
 			<div class="service__itempic">
-				<img src="~/assets/img/index_service_icon1.png" alt="申設流程" />
+				<img :src="`${useAsset(item.iconPath)}`" :alt="item.title" />
 			</div>
 			<div class="service__itemtextarea">
-				<h3 class="service__itemtitle">申設流程</h3>
+				<h3 class="service__itemtitle">{{ item.title }}</h3>
 			</div>
-			<NuxtLink to="/service" class="service__itemlink"></NuxtLink>
-		</li>
-		<li class="service__item">
-			<div class="service__itempic">
-				<img src="~/assets/img/index_service_icon2.png" alt="光電工程EPC" />
-			</div>
-			<div class="service__itemtextarea">
-				<h3 class="service__itemtitle">光電工程EPC</h3>
-			</div>
-			<NuxtLink to="/service" class="service__itemlink"></NuxtLink>
-		</li>
-		<li class="service__item">
-			<div class="service__itempic">
-				<img src="~/assets/img/index_service_icon3.png" alt="施工維運" />
-			</div>
-			<div class="service__itemtextarea">
-				<h3 class="service__itemtitle">施工維運</h3>
-			</div>
-			<NuxtLink to="/service" class="service__itemlink"></NuxtLink>
-		</li>
-		<li class="service__item">
-			<div class="service__itempic">
-				<img src="~/assets/img/index_service_icon4.png" alt="電廠投資" />
-			</div>
-			<div class="service__itemtextarea">
-				<h3 class="service__itemtitle">電廠投資</h3>
-			</div>
-			<NuxtLink to="/service" class="service__itemlink"></NuxtLink>
-		</li>
-		<li class="service__item">
-			<div class="service__itempic">
-				<img src="~/assets/img/index_service_icon5.png" alt="儲能系統" />
-			</div>
-			<div class="service__itemtextarea">
-				<h3 class="service__itemtitle">儲能系統</h3>
-			</div>
-			<NuxtLink to="/service" class="service__itemlink"></NuxtLink>
+			<template v-if="nowPage === 'index'">
+				<a
+					href="#"
+					class="service__itemlink"
+					@click.prevent="indexServiceClickHandle(index)"
+				></a>
+			</template>
+			<template v-else-if="nowPage === 'service'">
+				<a
+					href="#"
+					class="service__itemlink"
+					@click.prevent="serviceClickHandle(index)"
+					@mouseover.prevent="serviceMousemoveHandle(index)"
+				></a>
+			</template>
 		</li>
 	</ul>
 </template>

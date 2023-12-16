@@ -1,8 +1,28 @@
 <script setup>
-// import { useAssetHandle } from "@/composables/useAssetHandle.js";
+import { ref, onMounted } from "vue";
+import { useServiceStore } from "@/stores/useService.js";
+const store = useServiceStore();
+const route = useRoute();
+const serviceEpc = ref(null);
 
-// const { useAsset } = useAssetHandle();
-const x = 2;
+const scrollToTarget = (targetElement) => {
+	if (targetElement) {
+		targetElement.scrollIntoView({
+			behavior: "smooth",
+			block: "center",
+		});
+	}
+};
+
+onMounted(() => {
+	if (route.hash === "#epc") {
+		scrollToTarget(serviceEpc.value);
+	}
+});
+
+defineExpose({
+	serviceEpc,
+});
 </script>
 
 <template>
@@ -15,23 +35,25 @@ const x = 2;
 
 		<section class="service__info">
 			<div class="service__info__container">
-				<ServiceMenu></ServiceMenu>
+				<ServiceMenu :serviceEpc="serviceEpc"></ServiceMenu>
 			</div>
 		</section>
-		<section class="service__epc">
+		<section class="service__epc" ref="serviceEpc">
 			<div class="service__epc__container">
 				<div class="service__epc__info">
-					<h2 class="page__title service__epc__title">光電工程EPC</h2>
+					<h2 class="page__title service__epc__title">
+						{{ store.activeService.title }}
+					</h2>
 					<p class="service__epc__text">
-						湧業從設計規劃、送件、設備採購到工程管理都累積多年經驗，以品質為先，建置安全可靠的系統，保障客戶的權益。湧業從設計規劃、送件、設備採購到工程管理都累積多年經驗，以品質為先，建置安全可靠的系統，保障客戶的權益。
+						{{ store.activeService.content }}
 					</p>
 				</div>
 			</div>
 		</section>
-
 		<section class="service__apply">
 			<div class="service__apply__container">
 				<h2 class="page__title">申設流程</h2>
+
 				<div class="service__apply__content">
 					<ul class="service__apply__list" ref="serviceApplyList">
 						<li class="service__apply__item" ref="serviceApplyItem">
