@@ -2,9 +2,11 @@
 import { ref } from "vue";
 import { useServiceStore } from "@/stores/useService.js";
 import { useAssetHandle } from "@/composables/useAssetHandle.js";
+import { useCommon } from "@/composables/useCommon.js";
 
 const store = useServiceStore();
 const { useAsset } = useAssetHandle();
+const { isMobileDevice, scrollToTarget } = useCommon();
 const router = useRouter();
 const route = useRoute();
 const nowPage = ref("");
@@ -21,33 +23,6 @@ const props = defineProps({
 	},
 });
 
-const isMobileDevice = () => {
-	let mobileDevices = [
-		"Android",
-		"webOS",
-		"iPhone",
-		"iPad",
-		"iPod",
-		"BlackBerry",
-		"Windows Phone",
-	];
-	for (var i = 0; i < mobileDevices.length; i++) {
-		if (navigator.userAgent.match(mobileDevices[i])) {
-			return true;
-		}
-	}
-	return false;
-};
-
-const scrollToTarget = (targetElement) => {
-	if (targetElement) {
-		targetElement.scrollIntoView({
-			behavior: "smooth",
-			block: "center",
-		});
-	}
-};
-
 const serviceClickHandle = (index) => {
 	store.activeServiceChange(index);
 	if (isMobileDevice()) {
@@ -63,7 +38,11 @@ const serviceMousemoveHandle = (index) => {
 };
 const indexServiceClickHandle = (index) => {
 	store.activeServiceChange(index);
-	router.push("/service");
+	if (isMobileDevice()) {
+		router.push("/service#epc");
+	} else {
+		router.push("/service");
+	}
 };
 </script>
 

@@ -1,24 +1,8 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref } from "vue";
 import { useServiceStore } from "@/stores/useService.js";
 const store = useServiceStore();
-const route = useRoute();
 const serviceEpc = ref(null);
-
-const scrollToTarget = (targetElement) => {
-	if (targetElement) {
-		targetElement.scrollIntoView({
-			behavior: "smooth",
-			block: "center",
-		});
-	}
-};
-
-onMounted(() => {
-	if (route.hash === "#epc") {
-		scrollToTarget(serviceEpc.value);
-	}
-});
 
 defineExpose({
 	serviceEpc,
@@ -32,13 +16,13 @@ defineExpose({
 			text="湧業為您提供專業的光電整合服務，伴您與綠能未來同行"
 			picPath="qa_kv.jpg"
 		/>
-
 		<section class="service__info">
 			<div class="service__info__container">
 				<ServiceMenu :serviceEpc="serviceEpc"></ServiceMenu>
 			</div>
 		</section>
 		<section class="service__epc" ref="serviceEpc">
+			<span class="service__epc--top" id="epc"></span>
 			<div class="service__epc__container">
 				<div class="service__epc__info">
 					<h2 class="page__title service__epc__title">
@@ -52,7 +36,7 @@ defineExpose({
 		</section>
 		<section class="service__apply">
 			<div class="service__apply__container">
-				<h2 class="page__title">申設流程</h2>
+				<h2 class="page__title service__apply__title">申設流程</h2>
 
 				<div class="service__apply__content">
 					<ul class="service__apply__list" ref="serviceApplyList">
