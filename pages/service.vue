@@ -44,7 +44,13 @@ defineExpose({
 							<div class="service__apply__body">
 								<div class="service__apply__icon">
 									<img
+										class="service__apply__icon--origin"
 										src="~/assets/img/service_apply_icon1.png"
+										alt="現地勘查"
+									/>
+									<img
+										class="service__apply__icon--hover"
+										src="~/assets/img/service_apply_icon1_hover.png"
 										alt="現地勘查"
 									/>
 								</div>
@@ -56,7 +62,13 @@ defineExpose({
 							<div class="service__apply__body">
 								<div class="service__apply__icon">
 									<img
+										class="service__apply__icon--origin"
 										src="~/assets/img/service_apply_icon2.png"
+										alt="設計規劃"
+									/>
+									<img
+										class="service__apply__icon--hover"
+										src="~/assets/img/service_apply_icon2_hover.png"
 										alt="設計規劃"
 									/>
 								</div>
@@ -67,20 +79,29 @@ defineExpose({
 						<li class="service__apply__item">
 							<div class="service__apply__body">
 								<div class="service__apply__icon">
-									<img src="~/assets/img/service_apply_icon3.png" alt="簽約" />
+									<img
+										class="service__apply__icon--origin"
+										src="~/assets/img/service_apply_icon3.png"
+										alt="簽約"
+									/>
+									<img
+										class="service__apply__icon--hover"
+										src="~/assets/img/service_apply_icon3_hover.png"
+										alt="簽約"
+									/>
 								</div>
 								<span class="service__apply__num">3</span>
-								<!-- <div class="service__apply__extend">
-									<div class="service__apply__extendbody">
+								<div class="service__apply__extend">
+									<div class="service__apply__extendcontent">
 										<div class="service__apply__extendicon">
 											<img
-												src="~/assets/img/service_apply_icon3.png"
+												src="~/assets/img/service_apply_icon_extend.png"
 												alt="送件"
 											/>
 										</div>
+										<h6 class="service__apply__extendhead">送件</h6>
 									</div>
-									<h6 class="service__apply__extendhead">送件</h6>
-								</div> -->
+								</div>
 							</div>
 							<h5 class="service__apply__head">簽約</h5>
 						</li>
@@ -88,7 +109,13 @@ defineExpose({
 							<div class="service__apply__body">
 								<div class="service__apply__icon">
 									<img
+										class="service__apply__icon--origin"
 										src="~/assets/img/service_apply_icon4.png"
+										alt="施工規劃"
+									/>
+									<img
+										class="service__apply__icon--hover"
+										src="~/assets/img/service_apply_icon4_hover.png"
 										alt="施工規劃"
 									/>
 								</div>
@@ -100,7 +127,13 @@ defineExpose({
 							<div class="service__apply__body">
 								<div class="service__apply__icon">
 									<img
+										class="service__apply__icon--origin"
 										src="~/assets/img/service_apply_icon5.png"
+										alt="工程施工"
+									/>
+									<img
+										class="service__apply__icon--hover"
+										src="~/assets/img/service_apply_icon5_hover.png"
 										alt="工程施工"
 									/>
 								</div>
@@ -112,7 +145,13 @@ defineExpose({
 							<div class="service__apply__body">
 								<div class="service__apply__icon">
 									<img
+										class="service__apply__icon--origin"
 										src="~/assets/img/service_apply_icon6.png"
+										alt="併聯掛錶"
+									/>
+									<img
+										class="service__apply__icon--hover"
+										src="~/assets/img/service_apply_icon6_hover.png"
 										alt="併聯掛錶"
 									/>
 								</div>
@@ -123,7 +162,16 @@ defineExpose({
 						<li class="service__apply__item">
 							<div class="service__apply__body">
 								<div class="service__apply__icon">
-									<img src="~/assets/img/service_apply_icon7.png" alt="O&M" />
+									<img
+										class="service__apply__icon--origin"
+										src="~/assets/img/service_apply_icon7.png"
+										alt="O&M"
+									/>
+									<img
+										class="service__apply__icon--hover"
+										src="~/assets/img/service_apply_icon7_hover.png"
+										alt="O&M"
+									/>
 								</div>
 								<span class="service__apply__num">7</span>
 							</div>
@@ -132,7 +180,16 @@ defineExpose({
 						<li class="service__apply__item">
 							<div class="service__apply__body">
 								<div class="service__apply__icon">
-									<img src="~/assets/img/service_apply_icon8.png" alt="驗收" />
+									<img
+										class="service__apply__icon--origin"
+										src="~/assets/img/service_apply_icon8.png"
+										alt="驗收"
+									/>
+									<img
+										class="service__apply__icon--hover"
+										src="~/assets/img/service_apply_icon8_hover.png"
+										alt="驗收"
+									/>
 								</div>
 								<span class="service__apply__num">8</span>
 							</div>
@@ -142,7 +199,13 @@ defineExpose({
 							<div class="service__apply__body">
 								<div class="service__apply__icon">
 									<img
+										class="service__apply__icon--origin"
 										src="~/assets/img/service_apply_icon9.png"
+										alt="保固維運"
+									/>
+									<img
+										class="service__apply__icon--hover"
+										src="~/assets/img/service_apply_icon9_hover.png"
 										alt="保固維運"
 									/>
 								</div>
