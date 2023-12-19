@@ -126,61 +126,7 @@ onUnmounted(() => {
 			<div class="index__service__container">
 				<h2 class="index__service__title">我們的服務</h2>
 				<p class="index__service__text">更多服務請見解決方案單元</p>
-				<ul class="index__service__list">
-					<li class="index__service__item">
-						<div class="index__service__itempic">
-							<img src="~/assets/img/index_service_icon1.png" alt="申設流程" />
-						</div>
-						<div class="index__service__itemtextarea">
-							<h3 class="index__service__itemtitle">案件申請</h3>
-							<!-- <p class="index__service__itemtext">這裡可以放一點基本簡述說明</p> -->
-						</div>
-						<NuxtLink to="/service" class="index__service__itemlink"></NuxtLink>
-					</li>
-					<li class="index__service__item">
-						<div class="index__service__itempic">
-							<img
-								src="~/assets/img/index_service_icon2.png"
-								alt="光電工程EPC"
-							/>
-						</div>
-						<div class="index__service__itemtextarea">
-							<h3 class="index__service__itemtitle">光電工程EPC</h3>
-							<!-- <p class="index__service__itemtext">這裡可以放一點基本簡述說明</p> -->
-						</div>
-						<NuxtLink to="/service" class="index__service__itemlink"></NuxtLink>
-					</li>
-					<li class="index__service__item">
-						<div class="index__service__itempic">
-							<img src="~/assets/img/index_service_icon3.png" alt="施工維運" />
-						</div>
-						<div class="index__service__itemtextarea">
-							<h3 class="index__service__itemtitle">施工維運</h3>
-							<!-- <p class="index__service__itemtext">這裡可以放一點基本簡述說明</p> -->
-						</div>
-						<NuxtLink to="/service" class="index__service__itemlink"></NuxtLink>
-					</li>
-					<li class="index__service__item">
-						<div class="index__service__itempic">
-							<img src="~/assets/img/index_service_icon4.png" alt="電廠投資" />
-						</div>
-						<div class="index__service__itemtextarea">
-							<h3 class="index__service__itemtitle">電廠投資</h3>
-							<!-- <p class="index__service__itemtext">這裡可以放一點基本簡述說明</p> -->
-						</div>
-						<NuxtLink to="/service" class="index__service__itemlink"></NuxtLink>
-					</li>
-					<li class="index__service__item">
-						<div class="index__service__itempic">
-							<img src="~/assets/img/index_service_icon4.png" alt="儲能系統" />
-						</div>
-						<div class="index__service__itemtextarea">
-							<h3 class="index__service__itemtitle">儲能系統</h3>
-							<!-- <p class="index__service__itemtext">這裡可以放一點基本簡述說明</p> -->
-						</div>
-						<NuxtLink to="/service" class="index__service__itemlink"></NuxtLink>
-					</li>
-				</ul>
+				<ServiceMenu></ServiceMenu>
 			</div>
 		</section>
 		<section class="index__case">
