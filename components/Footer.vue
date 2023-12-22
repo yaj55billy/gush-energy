@@ -17,21 +17,19 @@
 						<div class="footer__contact__icon">
 							<img src="~/assets/img/icon_phone.png" />
 						</div>
-						<p class="footer__contact__text">+886-2-2504-7575</p>
+						<p class="footer__contact__text">0952652942</p>
 					</li>
 					<li class="footer__contact__item">
 						<div class="footer__contact__icon">
 							<img src="~/assets/img/icon_mail.png" />
 						</div>
-						<p class="footer__contact__text">service@new-greenpower.com</p>
+						<p class="footer__contact__text">kevin.yang@gush-energy.com</p>
 					</li>
 					<li class="footer__contact__item">
 						<div class="footer__contact__icon">
 							<img src="~/assets/img/icon_location.png" />
 						</div>
-						<p class="footer__contact__text">
-							104462台北市中山區復興北路420號13樓
-						</p>
+						<p class="footer__contact__text">雲林縣斗六市文華街1-1號</p>
 					</li>
 				</ul>
 			</div>
