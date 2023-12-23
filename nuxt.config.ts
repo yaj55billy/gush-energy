@@ -6,7 +6,7 @@ export default defineNuxtConfig({
 	//   }
 	// },
 	app: {
-		// baseURL: process.env.NODE_ENV === 'production' ? '/gush-energy/' : '/',
+		baseURL: process.env.NODE_ENV === "production" ? "/gush-energy/" : "/",
 		// buildAssetsDir: '/static/',
 		head: {
 			viewport:

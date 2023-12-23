@@ -232,7 +232,7 @@ defineExpose({
 				</div>
 				<div class="service__work__videoframe">
 					<video class="service__work__video" controls>
-						<source src="video/service.mp4" type="video/mp4" />
+						<source src="/video/service.mp4" type="video/mp4" />
 					</video>
 				</div>
 			</div>
