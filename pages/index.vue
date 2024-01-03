@@ -161,7 +161,7 @@ onUnmounted(() => {
 								<p class="index__case__text">
 									雲林縣<br />
 									工廠<br />
-									XXMW
+									522.24KW
 								</p>
 							</div>
 						</div>
@@ -174,18 +174,18 @@ onUnmounted(() => {
 							}"
 						>
 							<div class="index__case__textarea">
-								<h3 class="index__case__title">地面型</h3>
+								<h3 class="index__case__title">屋頂平鋪型</h3>
 								<p class="index__case__text">
-									XX縣<br />
-									XXX<br />
-									XXMW
+									高雄市<br />
+									特登工廠<br />
+									244.08KW
 								</p>
 							</div>
 						</div>
 					</li>
 				</ul>
 				<div class="index__case__btn">
-					<NuxtLink to="/case" class="btn">更多案例</NuxtLink>
+					<NuxtLink to="javascript:;" class="btn">更多案例</NuxtLink>
 				</div>
 			</div>
 		</section>

@@ -34,7 +34,7 @@
 				</ul>
 			</div>
 			<p class="footer__copyright">
-				Copyright © 2020 GUSHENERGY. All rights reserved.
+				Copyright © Gush Energy Co. , Ltd. All Rights Reserved.
 			</p>
 		</div>
 	</footer>

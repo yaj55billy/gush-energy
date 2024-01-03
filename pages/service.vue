@@ -13,7 +13,8 @@ defineExpose({
 	<div class="page service">
 		<PageKv
 			title="服務項目"
-			text="湧業為您提供專業的光電整合服務，伴您與綠能未來同行"
+			text="湧業為您提供專業的光電整合服務，"
+			textMobileSnap="伴您與綠能未來同行"
 			picPath="qa_kv.jpg"
 		/>
 		<section class="service__info">

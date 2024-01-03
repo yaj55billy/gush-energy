@@ -25,7 +25,7 @@ const handleSubmit = () => {
 	<div class="page contact">
 		<PageKv
 			title="聯絡我們"
-			text="若你對我們有何想法或建議，歡迎連寫下方資訊供我們聯繫您"
+			text="若您有進一步想了解的事項，歡迎填寫下方資訊供我們聯繫您"
 			picPath="contact_kv.jpg"
 		/>
 		<div class="contact__container">
@@ -84,7 +84,7 @@ const handleSubmit = () => {
 					</div>
 				</div>
 				<div class="form__btn">
-					<button type="submit" class="btn formbtn">深入了解</button>
+					<button type="submit" class="btn formbtn">送出</button>
 				</div>
 			</form>
 		</div>
