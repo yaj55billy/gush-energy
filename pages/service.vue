@@ -37,8 +37,13 @@ defineExpose({
 		</section>
 		<section class="service__apply">
 			<div class="service__apply__container">
-				<h2 class="page__title service__apply__title">申設流程</h2>
-
+				<h2 class="page__title service__apply__title">光電案件執行流程</h2>
+				<div>
+					<img src="~/assets/img/test.png" alt="" />
+					<img src="~/assets/img/test2.png" alt="" />
+					<img src="~/assets/img/test3.png" alt="" />
+					<img src="~/assets/img/test4.png" alt="" />
+				</div>
 				<div class="service__apply__content">
 					<ul class="service__apply__list" ref="serviceApplyList">
 						<li class="service__apply__item" ref="serviceApplyItem">
@@ -132,10 +137,15 @@ defineExpose({
 										src="~/assets/img/service_apply_icon5.png"
 										alt="工程施工"
 									/>
-									<img
+									<!-- <img
 										class="service__apply__icon--hover"
 										src="~/assets/img/service_apply_icon5_hover.png"
 										alt="工程施工"
+									/> -->
+									<img
+										class="service__apply__icon--hover"
+										src="~/assets/img/test.png"
+										alt=""
 									/>
 								</div>
 								<span class="service__apply__num">5</span>
@@ -218,6 +228,7 @@ defineExpose({
 				</div>
 			</div>
 		</section>
+
 		<section class="service__work">
 			<div class="service__work__container">
 				<div class="service__work__content">
