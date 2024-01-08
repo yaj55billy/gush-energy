@@ -142,11 +142,34 @@ onUnmounted(() => {
 		</section>
 		<section class="about__cooperate">
 			<div class="about__cooperate__container">
-				<!-- 這邊只能暫時做個定位，待 logo 狀況確定，再來做些調整 -->
 				<h2 class="about__cooperate__title page__title">合作夥伴</h2>
 				<ul class="about__cooperate__list">
-					<li v-for="item in 12" :key="item" class="about__cooperate__item">
-						<img src="~/assets/img/cooperate_logo.svg" alt="" />
+					<li class="about__cooperate__item">
+						<img src="~/assets/img/cooperate_logo_tsec.jpg" alt="元晶太陽能" />
+					</li>
+					<li class="about__cooperate__item">
+						<img src="~/assets/img/cooperate_logo_delta.png" alt="台達" />
+					</li>
+					<li class="about__cooperate__item">
+						<img src="~/assets/img/cooperate_logo_anji.png" alt="安集科技" />
+					</li>
+					<li class="about__cooperate__item">
+						<img src="~/assets/img/cooperate_logo_jysolar.jpg" alt="璟元光電" />
+					</li>
+					<li class="about__cooperate__item">
+						<img
+							src="~/assets/img/cooperate_logo_solarvest.jpg"
+							alt="solarvest"
+						/>
+					</li>
+					<li class="about__cooperate__item">
+						<img
+							src="~/assets/img/cooperate_logo_solaredge.jpg"
+							alt="solaredge"
+						/>
+					</li>
+					<li class="about__cooperate__item">
+						<img src="~/assets/img/cooperate_logo_ure.jpg" alt="ure" />
 					</li>
 				</ul>
 			</div>

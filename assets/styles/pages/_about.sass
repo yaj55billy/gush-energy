@@ -152,17 +152,26 @@
 			+xl 
 				max-width: 90%
 			+md 
+				max-width: 100%
 				padding: 50px 24px 55px
 		&__list
 			list-style: none
 			display: flex 
 			flex-wrap: wrap
-		&__item
-			width: 16.66667%
-			text-align: center
-			margin-top: 32px
+			justify-content: center
+			align-items: center
 			+md 
-				width: 33.33333%
-				margin-top: 16px
-			+sm 
-				width: 50%
+				justify-content: flex-start
+		&__item
+			width: 17%
+			text-align: center
+			margin: 32px 1.5% 0
+			+md 
+				width: 48%
+				margin: 16px 4% 0 0 
+			&:nth-child(2n)
+				+md 
+					margin: 16px 0 0 0 
+				
+			
+				

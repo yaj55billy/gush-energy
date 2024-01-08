@@ -1,13 +1,13 @@
 .service
 	&__list 
-		margin-top: 55px
+		margin-top: 35px
 		list-style: none
 		display: flex 
 		justify-content: space-between
 		+lg 
 			flex-wrap: wrap
 			justify-content: center
-			margin-top: 35px
+			margin-top: 0
 		+md 
 			justify-content: flex-start
 			margin-top: 0
@@ -15,7 +15,7 @@
 		margin-right: 2.7%
 		width: calc(89.2% / 5) // 100 - (2.7*4)
 		background-color: $color-gray
-		padding: 35px 15px 40px
+		padding: 24px 15px 28px
 		border-radius: 8px
 		box-shadow: 0px 4px 24px 0px rgba(255, 255, 255, 0.15)
 		transition: all .4s ease-in-out
@@ -23,7 +23,7 @@
 		+lg 
 			width: 32%
 			margin-right: 2%
-			margin-top: 20px
+			margin-top: 35px
 		+md 
 			width: calc(50% - 12px)
 			margin-right: 0
@@ -45,8 +45,8 @@
 			background-color: $color-white
 			box-shadow: 0px 24px 36px 0px rgba(0, 0, 0, 0.50)
 	&__itempic
-		width: 121px
-		height: 121px
+		width: 91px
+		height: 91px
 		background-color: $color-white
 		border: solid 2px $color-orange
 		box-shadow: 0px 5px 25px 0px rgba(0,0,0, .25)
@@ -56,21 +56,16 @@
 		display: flex 
 		justify-content: center
 		align-items: center
-		+xxl
-			width: 91px
-			height: 91px
 		+sm 
 			width: 48px
 			height: 48px
 			border: solid 1px $color-orange
 		img 
-			width: 73px
-			+xxl
-				width: 55px
+			width: 55px
 			+sm 
 				width: 30px
 	&__itemtextarea
-		margin-top: 24px
+		margin-top: 20px
 		+md
 			width: auto
 			flex: 1
@@ -80,7 +75,7 @@
 	&__itemtitle
 		font-size: 1.25rem
 		margin-top: -5px
-		+md 
+		+xxl 
 			font-size: 1.125rem
 		+sm
 			font-size: .875rem
@@ -96,16 +91,18 @@
 		position: relative
 		z-index: 5
 		&__container
-			padding: 5px 8% 60px 
+			max-width: 68.4%
+			padding: 5px 0 40px 
 			margin: 0 auto
 			text-align: center
 			color: $color-white
 			+xl 
-				padding: 5px 5% 60px
+				max-width: 90%
 			+md 
-				padding: 45px 24px 75px
+				max-width: 100%
+				padding: 15px 24px 40px
 			+sm 
-				padding: 20px 24px 50px
+				// padding: 20px 24px 50px
 	&__epc
 		width: 100%
 		height: 0
@@ -164,7 +161,7 @@
 			margin-top: 30px
 	&__apply
 		&__container
-			max-width: 82.4%
+			max-width: 68.4%
 			margin: 0 auto
 			padding: 50px 0 160px 
 			+xl
@@ -189,8 +186,10 @@
 			+md 
 				padding-top: 30px
 		&__item
-			width: 15.66666%
-			margin-right: 5.4%
+			// width: 15.66666%
+			// margin-right: 5.4%
+			width: 13.66666%
+			margin-right: 7.4%
 			padding: 55px 0 0
 			+md 
 				width: calc(33.333% - 16px)
