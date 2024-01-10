@@ -72,6 +72,11 @@ const toggleItemHandle = (index) => {
 		/>
 		<div class="qa__container">
 			<div class="qa__content">
+				<div class="qa__content__head">
+					<ul class="qa__content__headlist">
+						<li class="qa__content__headitem active">太陽能系統設置</li>
+					</ul>
+				</div>
 				<div class="qa__content__body">
 					<section class="qa__content__bodysection">
 						<div class="accordion">
@@ -86,23 +91,5 @@ const toggleItemHandle = (index) => {
 		</div>
 	</div>
 </template>
-<!-- <div class="qa__content__head">
-  <ul class="qa__content__headlist">
-    <li
-      @click="changeQaCurrentHandle(1)"
-      :class="{ active: qaCurrentContent === 1 }"
-      class="qa__content__headitem"
-    >
-      太陽能系統設置
-    </li>
-    <li
-      @click="changeQaCurrentHandle(2)"
-      :class="{ active: qaCurrentContent === 2 }"
-      class="qa__content__headitem"
-    >
-      其他系統
-    </li>
-  </ul>
-</div> -->
 
 <style></style>

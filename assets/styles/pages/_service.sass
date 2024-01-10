@@ -15,7 +15,7 @@
 		margin-right: 2.7%
 		width: calc(89.2% / 5) // 100 - (2.7*4)
 		background-color: $color-gray
-		padding: 24px 15px 28px
+		padding: 18px 15px 22px
 		border-radius: 8px
 		box-shadow: 0px 4px 24px 0px rgba(255, 255, 255, 0.15)
 		transition: all .4s ease-in-out
@@ -91,8 +91,8 @@
 		position: relative
 		z-index: 5
 		&__container
-			max-width: 68.4%
-			padding: 5px 0 40px 
+			max-width: 84%
+			padding: 10px 0 45px 
 			margin: 0 auto
 			text-align: center
 			color: $color-white
@@ -161,14 +161,16 @@
 			margin-top: 30px
 	&__apply
 		&__container
-			max-width: 68.4%
+			max-width: 1365px
 			margin: 0 auto
-			padding: 50px 0 160px 
+			padding: 50px 0 130px 
+			+xxl
+				max-width: 1024px
 			+xl
 				max-width: 90%
 			+md 
 				max-width: 100%
-				padding: 45px 24px 75px 
+				padding: 45px 0px 75px 
 		&__title
 			font-size: 2rem
 			+md 
@@ -186,25 +188,41 @@
 			+md 
 				padding-top: 30px
 		&__item
-			// width: 15.66666%
-			// margin-right: 5.4%
-			width: 13.66666%
-			margin-right: 7.4%
-			padding: 55px 0 0
+			width: 160px
+			margin: 0 42px
+			padding: 50px 0 0
+			+xxl 
+				width: 120px
+				margin: 0 32px
+			+lg 
+				width: 14%
+				margin: 0 3%
 			+md 
-				width: calc(33.333% - 16px)
-				margin-right: 24px
 				padding: 28px 0 0
-			&:nth-child(3n)
-				+md 
-					margin-right: 0
-			&:nth-child(5n)
-				margin-right: 0
-				+md 
-					margin-right: 24px
-			&:last-child
-				margin-right: 0
-				
+			+sm 
+				width: 20%
+				margin: 20px
+				padding: 0
+			+xs 
+				width: 80px
+				@media (max-width:370px)
+					width: 20%
+
+			&:nth-child(3)
+				.service__apply__icon--origin, .service__apply__icon--hover
+					transform: translateY(-50%) translateX(6px)
+					+md 
+						transform: translateY(-50%) translateX(3px)
+			&:nth-child(5)
+				.service__apply__icon--origin, .service__apply__icon--hover
+					transform: translateY(-50%) translateX(4px)
+					+md 
+						transform: translateY(-50%) translateX(2px)
+			&:nth-child(8)
+				.service__apply__icon--origin, .service__apply__icon--hover
+					transform: translateY(-50%) translateX(5px)
+					+md 
+						transform: translateY(-50%) translateX(3px)
 		&__body 
 			width: 100%
 			height: 0
@@ -238,16 +256,10 @@
 				right: 0
 				margin: auto
 				transition: opacity .4s ease-in-out
-				+xl
-					max-width: 110px
-				+lg 
-					max-width: 100px
+				max-width: 44%
 				+md 
-					max-width: 135px
 				+sm 
-					max-width: 80px
 				+xs 
-					max-width: 70px
 			&--hover
 				opacity: 0
 		&__num
@@ -256,19 +268,26 @@
 			align-items: center
 			font-size: 1.5rem 
 			font-weight: 900
-			width: 26.85%
-			height: 26.85%
+			width: 60px
+			height: 60px
 			background-color: $color-orange
 			border-radius: 99em
 			position: absolute
-			left: 0px
-			top: 0px
+			left: -4px
+			top: -12px
 			color: $color-orange
 			text-shadow: 2px 0 0 $color-white, -2px 0 0 $color-white, 0 2px 0 $color-white, 0 -2px 0 $color-white 
 			transition: all .4s ease-in-out
 			+xxl 
 				width: 47px
 				height: 47px
+			+lg 
+				width: 42px
+				height: 42px
+			+md 
+				width: 36px
+				height: 36px
+				font-size: 1.25rem
 			+sm 
 				left: -8px
 				top: -8px
@@ -286,20 +305,27 @@
 		
 		&__extend
 			position: absolute
-			right: -36px
-			top: -20px
-			width: 46.85%
-			height: 46.85%
+			right: -42px
+			top: -32px
+			width: 96px
+			height: 96px
 			background-color: $color-blue-dark5
 			border-radius: 100%
 			+xxl
 				width: 80px
 				height: 80px
-				right: -12px
-				top: -12px
+				right: -40px
+				top: -36px
 			+lg 
+				width: 65px
+				height: 65px
+				right: -30px
+				top: -30px
+			+md 
 				width: 52px
 				height: 52px
+				right: -20px
+				top: -24px
 		&__extendcontent
 			position: absolute
 			top: 50%
@@ -314,6 +340,7 @@
 			flex-direction: column
 			justify-content: center
 			align-items: center
+			
 		&__extendicon
 			width: 34%
 			+xxl

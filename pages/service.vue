@@ -38,13 +38,9 @@ defineExpose({
 		<section class="service__apply">
 			<div class="service__apply__container">
 				<h2 class="page__title service__apply__title">光電案件執行流程</h2>
-				<div>
-					<img src="~/assets/img/service_apply_icon3.png" alt="簽約" />
-					<img src="~/assets/img/service_apply_icon3_hover.png" alt="簽約" />
-				</div>
 				<div class="service__apply__content">
-					<ul class="service__apply__list" ref="serviceApplyList">
-						<li class="service__apply__item" ref="serviceApplyItem">
+					<ul class="service__apply__list">
+						<li class="service__apply__item">
 							<div class="service__apply__body">
 								<div class="service__apply__icon">
 									<img
