@@ -1,33 +1,21 @@
 <script setup>
-import { ref, computed, onMounted } from "vue";
+import { onMounted } from "vue";
 import { useIndexAbout } from "@/composables/useIndexAbout.js";
 import { useIndexKv } from "@/composables/useIndexKv.js";
 import { useAssetHandle } from "@/composables/useAssetHandle.js";
 
 const { useAsset } = useAssetHandle();
 
-const {
-	kvData,
-	kvDataActive,
-	nowKvData,
-	nowKvPath,
-	kvTimer,
-	changeKvDataActive,
-	kvTimerHandler,
-	startKvTimer,
-} = useIndexKv();
+const { kvData, nowKvPath, kvTimer, startKvTimer } = useIndexKv();
 
 const {
 	aboutData,
 	aboutDataActive,
-	nowAboutData,
 	nowAboutTitle,
 	nowAboutDescription,
-	nowAboutLink,
 	nowAboutPath,
 	aboutTimer,
 	changeAboutDataActive,
-	aboutTimerHandler,
 	startAboutTimer,
 	stopAboutTimer,
 } = useIndexAbout();
@@ -73,11 +61,6 @@ onUnmounted(() => {
 			<div class="index__about__info">
 				<div class="index__about__container">
 					<h2 class="index__about__title">最新消息</h2>
-					<!-- <Transition name="fade">
-						<h3 class="index__about__subtitle" :key="nowAboutTitle">
-							<span>{{ nowAboutTitle }}</span>
-						</h3>
-					</Transition> -->
 					<h3
 						class="index__about__subtitle"
 						@mouseover="stopAboutTimer"
@@ -92,14 +75,14 @@ onUnmounted(() => {
 					>
 						{{ nowAboutDescription }}
 					</p>
-					<NuxtLink :to="nowAboutLink" class="index__about__link"
+					<!-- <NuxtLink :to="nowAboutLink" class="index__about__link"
 						>瞭解更多
 						<img
 							src="~/assets/img/index_about_arrow.png"
 							class="index__about__icon"
 						/>
-					</NuxtLink>
-					<ul class="index__about__pagination">
+					</NuxtLink> -->
+					<ul class="index__about__pagination" v-if="aboutData.length > 1">
 						<li
 							class="index__about__pagination__item"
 							v-for="(item, index) in aboutData"
@@ -161,7 +144,7 @@ onUnmounted(() => {
 								<p class="index__case__text">
 									雲林縣<br />
 									工廠<br />
-									XXMW
+									522.24KW
 								</p>
 							</div>
 						</div>
@@ -174,18 +157,18 @@ onUnmounted(() => {
 							}"
 						>
 							<div class="index__case__textarea">
-								<h3 class="index__case__title">地面型</h3>
+								<h3 class="index__case__title">屋頂平鋪型</h3>
 								<p class="index__case__text">
-									XX縣<br />
-									XXX<br />
-									XXMW
+									高雄市<br />
+									特登工廠<br />
+									244.08KW
 								</p>
 							</div>
 						</div>
 					</li>
 				</ul>
 				<div class="index__case__btn">
-					<NuxtLink to="/case" class="btn">更多案例</NuxtLink>
+					<NuxtLink to="javascript:;" class="btn">更多案例</NuxtLink>
 				</div>
 			</div>
 		</section>

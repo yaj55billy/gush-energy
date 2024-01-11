@@ -25,10 +25,9 @@ const props = defineProps({
 
 const serviceClickHandle = (index) => {
 	store.activeServiceChange(index);
-	if (isMobileDevice()) {
-		scrollToTarget(props.serviceEpc);
-	}
+	scrollToTarget(props.serviceEpc);
 };
+
 const serviceMousemoveHandle = (index) => {
 	if (isMobileDevice()) {
 		return false;
@@ -38,11 +37,11 @@ const serviceMousemoveHandle = (index) => {
 };
 const indexServiceClickHandle = (index) => {
 	store.activeServiceChange(index);
-	if (isMobileDevice()) {
-		router.push("/service#epc");
-	} else {
-		router.push("/service");
-	}
+	router.push("/service#epc");
+	// if (isMobileDevice()) {
+	// } else {
+	// 	router.push("/service");
+	// }
 };
 </script>
 

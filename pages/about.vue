@@ -32,11 +32,11 @@ onUnmounted(() => {
 			<div class="about__vision__container">
 				<h2 class="about__vision__title page__title">湧業願景</h2>
 				<p class="about__vision__text">
-					「湧業能源」成立於2020年，主力太陽能系統建置與投資開發之相關領域。致力於以太陽能光電協助企業邁向永續能源轉型，為台灣2050年淨零排碳目標盡一份心力。我們為業主提供可靠、永續的全方位光電解決方案，包含：光電工程EPC、施工、維運管理、電廠投資以及儲能系統的服務。為台灣打造乾淨永續的綠能未來。
+					「湧業能源」成立於2020年，主力太陽能系統建置與投資開發之相關領域。致力於以太陽能光電協助企業邁向永續能源轉型，為台灣2050年淨零排碳目標盡一份心力。我們為業主提供可靠、永續的全方位光電解決方案，公司經營項目包含：光電工程EPC、電廠維運管理、電廠投資以及儲能系統規劃建置。為台灣打造乾淨永續的綠能未來。
 				</p>
-				<div class="about__vision__pic">
+				<!-- <div class="about__vision__pic">
 					<img src="~/assets/img/about_vision_pic.jpg" alt="湧業願景" />
-				</div>
+				</div> -->
 			</div>
 		</section>
 		<section class="about__features">
@@ -124,7 +124,7 @@ onUnmounted(() => {
 						>
 							<h2 class="page__title about__features__bodytitle">深耕地方</h2>
 							<p class="about__features__bodytext">
-								於雲林、台南皆成立辦事處，方便快速反應並處理系統異常。深耕地方，加強地方關係，使施工及申請更快速。採購：我們對環境和社區承擔責任，致力於打造綠色環保的生活環境。
+								於雲林、台南皆成立辦事處，方便快速反應並處理系統異常。深耕地方，加強地方關係，使施工及申請更快速。
 							</p>
 						</div>
 						<div
@@ -133,7 +133,7 @@ onUnmounted(() => {
 						>
 							<h2 class="page__title about__features__bodytitle">專業採購</h2>
 							<p class="about__features__bodytext">
-								與多家設備材料供應商長期配合，並通過嚴格的材料審查機制，太陽能模組皆派專業人員廠驗。
+								與多家設備材料供應商長期配合，依據客戶需求提供國內外設備，並通過嚴格的材料審查機制，確保客戶權益。
 							</p>
 						</div>
 					</div>
@@ -142,11 +142,28 @@ onUnmounted(() => {
 		</section>
 		<section class="about__cooperate">
 			<div class="about__cooperate__container">
-				<!-- 這邊只能暫時做個定位，待 logo 狀況確定，再來做些調整 -->
 				<h2 class="about__cooperate__title page__title">合作夥伴</h2>
 				<ul class="about__cooperate__list">
-					<li v-for="item in 12" :key="item" class="about__cooperate__item">
-						<img src="~/assets/img/cooperate_logo.svg" alt="" />
+					<li class="about__cooperate__item">
+						<img src="~/assets/img/cooperate_logo_1.png" alt="元晶太陽能" />
+					</li>
+					<li class="about__cooperate__item">
+						<img src="~/assets/img/cooperate_logo_2.png" alt="安集科技" />
+					</li>
+					<li class="about__cooperate__item">
+						<img src="~/assets/img/cooperate_logo_3.png" alt="solarvest" />
+					</li>
+					<li class="about__cooperate__item">
+						<img src="~/assets/img/cooperate_logo_4.png" alt="solaredge" />
+					</li>
+					<li class="about__cooperate__item">
+						<img src="~/assets/img/cooperate_logo_5.png" alt="台達" />
+					</li>
+					<li class="about__cooperate__item">
+						<img src="~/assets/img/cooperate_logo_6.png" alt="璟元光電" />
+					</li>
+					<li class="about__cooperate__item">
+						<img src="~/assets/img/cooperate_logo_7.png" alt="ure" />
 					</li>
 				</ul>
 			</div>

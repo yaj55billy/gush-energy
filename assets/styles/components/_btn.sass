@@ -7,10 +7,13 @@
 	color: $color-white
 	cursor: pointer
 	+sm 
-		width: 100%
+		width: calc(100% - 48px) // 一邊 24px
+		font-size: 1rem
 	&.formbtn
 		border: solid 2px $color-orange
 		background-color: $color-orange
+		+sm 
+			width: 100%
 	&:hover 
 		opacity: .8
 

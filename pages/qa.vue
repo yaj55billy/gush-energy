@@ -57,10 +57,10 @@ const toggleItemHandle = (index) => {
 };
 
 // tab
-const qaCurrentContent = ref(1);
-const changeQaCurrentHandle = (num) => {
-	qaCurrentContent.value = num;
-};
+// const qaCurrentContent = ref(1);
+// const changeQaCurrentHandle = (num) => {
+// 	qaCurrentContent.value = num;
+// };
 </script>
 
 <template>
@@ -74,89 +74,16 @@ const changeQaCurrentHandle = (num) => {
 			<div class="qa__content">
 				<div class="qa__content__head">
 					<ul class="qa__content__headlist">
-						<li
-							@click="changeQaCurrentHandle(1)"
-							:class="{ active: qaCurrentContent === 1 }"
-							class="qa__content__headitem"
-						>
-							太陽能系統設置
-						</li>
-						<li
-							@click="changeQaCurrentHandle(2)"
-							:class="{ active: qaCurrentContent === 2 }"
-							class="qa__content__headitem"
-						>
-							其他系統
-						</li>
-						<li
-							@click="changeQaCurrentHandle(3)"
-							:class="{ active: qaCurrentContent === 3 }"
-							class="qa__content__headitem"
-						>
-							其他系統
-						</li>
-						<li
-							@click="changeQaCurrentHandle(4)"
-							:class="{ active: qaCurrentContent === 4 }"
-							class="qa__content__headitem"
-						>
-							其他系統
-						</li>
+						<li class="qa__content__headitem active">太陽能系統設置</li>
 					</ul>
 				</div>
-
 				<div class="qa__content__body">
-					<section
-						class="qa__content__bodysection"
-						v-show="qaCurrentContent === 1"
-					>
+					<section class="qa__content__bodysection">
 						<div class="accordion">
 							<AccordionItem
 								:accordionData="solarEnergyData"
 								:toggleItemHandle="toggleItemHandle"
 							/>
-						</div>
-					</section>
-					<section
-						class="qa__content__bodysection"
-						v-show="qaCurrentContent === 2"
-					>
-						<div style="margin-top: 30px">
-							<h2 class="page__title">內容2</h2>
-							<p class="page__text">
-								Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-								Inventore velit veniam minus, iste nihil quas quibusdam, dicta
-								nisi omnis saepe sequi minima. Facilis, earum modi voluptate
-								quas reprehenderit non laboriosam!
-							</p>
-						</div>
-					</section>
-					<section
-						class="qa__content__bodysection"
-						v-show="qaCurrentContent === 3"
-					>
-						<div style="margin-top: 30px">
-							<h2 class="page__title">內容3</h2>
-							<p class="page__text">
-								Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-								Inventore velit veniam minus, iste nihil quas quibusdam, dicta
-								nisi omnis saepe sequi minima. Facilis, earum modi voluptate
-								quas reprehenderit non laboriosam!
-							</p>
-						</div>
-					</section>
-					<section
-						class="qa__content__bodysection"
-						v-show="qaCurrentContent === 4"
-					>
-						<div style="margin-top: 30px">
-							<h2 class="page__title">內容4</h2>
-							<p class="page__text">
-								Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-								Inventore velit veniam minus, iste nihil quas quibusdam, dicta
-								nisi omnis saepe sequi minima. Facilis, earum modi voluptate
-								quas reprehenderit non laboriosam!
-							</p>
 						</div>
 					</section>
 				</div>
