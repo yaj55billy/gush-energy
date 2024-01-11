@@ -145,31 +145,25 @@ onUnmounted(() => {
 				<h2 class="about__cooperate__title page__title">合作夥伴</h2>
 				<ul class="about__cooperate__list">
 					<li class="about__cooperate__item">
-						<img src="~/assets/img/cooperate_logo_tsec.jpg" alt="元晶太陽能" />
+						<img src="~/assets/img/cooperate_logo_1.png" alt="元晶太陽能" />
 					</li>
 					<li class="about__cooperate__item">
-						<img src="~/assets/img/cooperate_logo_delta.png" alt="台達" />
+						<img src="~/assets/img/cooperate_logo_2.png" alt="安集科技" />
 					</li>
 					<li class="about__cooperate__item">
-						<img src="~/assets/img/cooperate_logo_anji.png" alt="安集科技" />
+						<img src="~/assets/img/cooperate_logo_3.png" alt="solarvest" />
 					</li>
 					<li class="about__cooperate__item">
-						<img src="~/assets/img/cooperate_logo_jysolar.jpg" alt="璟元光電" />
+						<img src="~/assets/img/cooperate_logo_4.png" alt="solaredge" />
 					</li>
 					<li class="about__cooperate__item">
-						<img
-							src="~/assets/img/cooperate_logo_solarvest.jpg"
-							alt="solarvest"
-						/>
+						<img src="~/assets/img/cooperate_logo_5.png" alt="台達" />
 					</li>
 					<li class="about__cooperate__item">
-						<img
-							src="~/assets/img/cooperate_logo_solaredge.jpg"
-							alt="solaredge"
-						/>
+						<img src="~/assets/img/cooperate_logo_6.png" alt="璟元光電" />
 					</li>
 					<li class="about__cooperate__item">
-						<img src="~/assets/img/cooperate_logo_ure.jpg" alt="ure" />
+						<img src="~/assets/img/cooperate_logo_7.png" alt="ure" />
 					</li>
 				</ul>
 			</div>

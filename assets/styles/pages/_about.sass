@@ -146,7 +146,7 @@
 
 	&__cooperate
 		&__container
-			max-width: 68.4%
+			max-width: 55.555%
 			margin: 0 auto
 			padding: 50px 0 55px
 			+xl 
@@ -163,15 +163,20 @@
 			+md 
 				justify-content: flex-start
 		&__item
-			width: 17%
+			width: 15%
 			text-align: center
-			margin: 32px 1.5% 0
+			margin-top: 32px
+			margin-right: 6.25%
 			+md 
-				width: 48%
-				margin: 16px 4% 0 0 
+				width: calc(50% - 12px)
+				margin-top: 24px
+				margin-right: 24px
 			&:nth-child(2n)
 				+md 
-					margin: 16px 0 0 0 
-				
-			
-				
+					margin-right: 0
+			&:nth-child(5n)
+				margin-right: 0
+				+md
+					margin-right: 24px
+			&:last-child 
+				margin-right: 0

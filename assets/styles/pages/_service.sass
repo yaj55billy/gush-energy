@@ -236,8 +236,7 @@
 				box-shadow: 0px 25px 25px 0px rgba(0, 0, 0, 0.5)
 				.service__apply__num 
 					background-color: $color-white
-					color: $color-white
-					text-shadow: 2px 0 0 $color-orange, -2px 0 0 $color-orange, 0 2px 0 $color-orange, 0 -2px 0 $color-orange 
+					color: $color-orange
 				.service__apply__icon--origin
 					opacity: 0
 				.service__apply__icon--hover
@@ -257,9 +256,6 @@
 				margin: auto
 				transition: opacity .4s ease-in-out
 				max-width: 44%
-				+md 
-				+sm 
-				+xs 
 			&--hover
 				opacity: 0
 		&__num
@@ -275,8 +271,8 @@
 			position: absolute
 			left: -4px
 			top: -12px
+			text-shadow: 1px 0 $color-white, 1px 1px $color-white,1px -1px $color-white, 0 1px $color-white, 0 -1px $color-white, -1px 0 $color-white, -1px 1px $color-white, -1px -1px $color-white, 0px -1.5px $color-white
 			color: $color-orange
-			text-shadow: 2px 0 0 $color-white, -2px 0 0 $color-white, 0 2px 0 $color-white, 0 -2px 0 $color-white 
 			transition: all .4s ease-in-out
 			+xxl 
 				width: 47px
@@ -291,6 +287,7 @@
 			+sm 
 				left: -8px
 				top: -8px
+
 
 		&__head
 			text-align: center
