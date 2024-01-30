@@ -18,7 +18,6 @@ export function useIndexAbout() {
 		// 	link: "/about",
 		// 	path: "testpic.png",
 		// },
-		// {
 	]);
 	const aboutDataActive = ref(0);
 	const nowAboutData = computed(() => aboutData.value[aboutDataActive.value]);
