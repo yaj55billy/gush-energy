@@ -10,14 +10,15 @@ export function useIndexAbout() {
 			link: "/about",
 			path: "index_news_pic1.jpg",
 		},
-		// {
-		// 	id: "about2",
-		// 	title: "湧業能源與企業合作2",
-		// 	description:
-		// 		"湧業能源與電力將會聯手合作，在未來的3年內共同打造5個發電廠，並將整合相關技術以達到2050淨零排碳的目標(2)",
-		// 	link: "/about",
-		// 	path: "testpic.png",
-		// },
+		{
+		 	id: "about2",
+			title: "高雄特登工廠224.06KW竣工",
+		 	description:
+		 		"2024年1月23日掛錶",
+		 	link: "/about",
+		 	path: "LINE_ALBUM_申騰空拍_231229_16.jpg",
+		 },
+
 	]);
 	const aboutDataActive = ref(0);
 	const nowAboutData = computed(() => aboutData.value[aboutDataActive.value]);
