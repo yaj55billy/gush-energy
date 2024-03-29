@@ -12,13 +12,20 @@ export function useIndexAbout() {
 		},
 		{
 		 	id: "about2",
-			title: "高雄特登工廠224.06KW竣工",
+			title: "高雄特登工廠244.08KW竣工",
 		 	description:
 		 		"2024年1月23日掛錶",
 		 	link: "/about",
 		 	path: "LINE_ALBUM_申騰空拍_231229_16.jpg",
 		 },
-
+		 {
+			id: "about3",
+		   title: "台南廠房487.92KW竣工",
+			description:
+				"2024年3月22日掛錶",
+			link: "/about",
+			path: "DJI_0508.jpg",
+		},
 	]);
 	const aboutDataActive = ref(0);
 	const nowAboutData = computed(() => aboutData.value[aboutDataActive.value]);
