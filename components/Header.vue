@@ -89,9 +89,7 @@ onUnmounted(() => {
 							>
 						</li>
 						<li class="nav__menu__item">
-							<NuxtLink to="javascript:;" class="nav__menu__link"
-								>實績案例</NuxtLink
-							>
+							<NuxtLink to="/case" class="nav__menu__link">實績案例</NuxtLink>
 						</li>
 						<li class="nav__menu__item">
 							<NuxtLink to="/contact" class="nav__menu__link"

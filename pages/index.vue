@@ -168,7 +168,7 @@ onUnmounted(() => {
 					</li>
 				</ul>
 				<div class="index__case__btn">
-					<NuxtLink to="javascript:;" class="btn">更多案例</NuxtLink>
+					<NuxtLink to="/case" class="btn">更多案例</NuxtLink>
 				</div>
 			</div>
 		</section>

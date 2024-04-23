@@ -8,9 +8,7 @@
 					<NuxtLink to="/" class="footer__menu__link">首頁</NuxtLink>
 					<NuxtLink to="/about" class="footer__menu__link">關於湧業</NuxtLink>
 					<NuxtLink to="/service" class="footer__menu__link">服務項目</NuxtLink>
-					<NuxtLink to="javascript:;" class="footer__menu__link"
-						>實績案例</NuxtLink
-					>
+					<NuxtLink to="/case" class="footer__menu__link">實績案例</NuxtLink>
 					<NuxtLink to="/qa" class="footer__menu__link">常見問題</NuxtLink>
 					<NuxtLink to="/contact" class="footer__menu__link">聯絡我們</NuxtLink>
 				</nav>
