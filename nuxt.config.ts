@@ -49,7 +49,7 @@ export default defineNuxtConfig({
 				autoImports: ["defineStore", "acceptHMRUpdate"],
 			},
 		],
+		"nuxt-swiper",
 	],
-
 	devtools: { enabled: true },
 });
