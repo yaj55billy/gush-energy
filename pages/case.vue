@@ -1,4 +1,7 @@
 <script setup>
+import { useCaseStore } from "@/stores/useCase.js";
+const caseStore = useCaseStore();
+
 import { EffectFade, Navigation, Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/vue";
 
@@ -24,8 +27,28 @@ const swiperConfig = {
 
 <template>
 	<div class="page case">
-		<h2>實績案例頁面</h2>
-		<div class="w-300 h-260 white">
+		<div>
+			<section
+				v-for="(caseItem, index) in caseStore.caseData"
+				:key="caseItem.sectionId"
+				class="case__section"
+			>
+				<div class="case__container">
+					<div class="case__content flex">
+						<div class="case__info">
+							<h2 class="page__title"></h2>
+							<div></div>
+							<p>content1</p>
+							<p>content2</p>
+							<p>content3</p>
+						</div>
+						<div class="case__pic"></div>
+					</div>
+					<!-- {{ caseItem }} -->
+				</div>
+			</section>
+		</div>
+		<!-- <div class="w-300 h-260 white">
 			<Swiper v-bind="swiperConfig">
 				<SwiperSlide>Slide 1</SwiperSlide>
 				<SwiperSlide>Slide 2</SwiperSlide>
@@ -36,7 +59,7 @@ const swiperConfig = {
 						alt=""
 				/></SwiperSlide>
 			</Swiper>
-		</div>
+		</div> -->
 	</div>
 </template>
 
