@@ -1,5 +1,7 @@
 <script setup>
+import { useAssetHandle } from "@/composables/useAssetHandle.js";
 import { useCaseStore } from "@/stores/useCase.js";
+const { useAsset } = useAssetHandle();
 const caseStore = useCaseStore();
 
 import { EffectFade, Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -14,7 +16,7 @@ const swiperConfig = {
 		clickable: true,
 	},
 	autoplay: {
-		delay: 2000,
+		delay: 6000,
 		disableOnInteraction: false,
 	},
 	effect: "fade",
@@ -27,57 +29,90 @@ const swiperConfig = {
 
 <template>
 	<div class="page case">
+		<PageKv
+			title="實績案例"
+			text="湧業為您提供專業的光電整合服務，伴您與綠能未來同行"
+			picPath="case_kv.jpg"
+		/>
 		<div>
 			<section
-				v-for="(caseItem, index) in caseStore.caseData"
+				v-for="caseItem in caseStore.caseData"
 				:key="caseItem.sectionId"
 				class="case__section"
 			>
 				<div class="case__container">
-					<div class="case__content flex">
-						<div class="case__info">
-							<h2 class="page__title"></h2>
-							<div></div>
-							<p>content1</p>
-							<p>content2</p>
-							<p>content3</p>
+					<div class="case__main">
+						<div class="case__textarea">
+							<h2 class="page__title">
+								{{
+									caseItem.buildType ? caseItem.buildType : "屋頂平鋪、棚架型"
+								}}
+							</h2>
+							<div class="case__info">
+								<img
+									class="case__info__icon"
+									src="~/assets/img/case_locaion_icon.png"
+								/>
+								<span class="case__info__city">
+									{{ caseItem.city ? caseItem.city : "台灣" }}
+								</span>
+								<span class="case__info__place">
+									{{ caseItem.place ? caseItem.place : "工廠" }}
+								</span>
+								<span class="case__info__line"></span>
+								<span class="case__info__capacity" v-if="caseItem.capacity">
+									{{ caseItem.capacity }}
+								</span>
+							</div>
+							<div class="case__details">
+								<p class="case__details__content" v-if="caseItem.content1">
+									{{ caseItem.content1 }}
+								</p>
+								<p class="case__details__content" v-if="caseItem.content2">
+									{{ caseItem.content2 }}
+								</p>
+								<p class="case__details__content" v-if="caseItem.content3">
+									{{ caseItem.content3 }}
+								</p>
+							</div>
 						</div>
-						<div class="case__pic"></div>
+						<div class="case__pic">
+							<Swiper
+								v-bind="swiperConfig"
+								v-if="caseItem.caseImagePath.length !== 0"
+							>
+								<SwiperSlide
+									v-for="(imagePath, index) in caseItem.caseImagePath"
+									:key="imagePath + index"
+								>
+									<div
+										class="case__pic__content"
+										:style="{
+											backgroundImage: `url(${useAsset(imagePath)})`,
+										}"
+									></div>
+								</SwiperSlide>
+							</Swiper>
+						</div>
 					</div>
-					<!-- {{ caseItem }} -->
 				</div>
 			</section>
 		</div>
-		<!-- <div class="w-300 h-260 white">
-			<Swiper v-bind="swiperConfig">
-				<SwiperSlide>Slide 1</SwiperSlide>
-				<SwiperSlide>Slide 2</SwiperSlide>
-				<SwiperSlide>Slide 3</SwiperSlide>
-				<SwiperSlide
-					><img
-						src="https://images.unsplash.com/photo-1713783508683-8ee05bca0521?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-						alt=""
-				/></SwiperSlide>
-			</Swiper>
-		</div> -->
 	</div>
 </template>
 
-<style scoped>
-.w-300 {
-	width: 300px;
-	margin: 0 auto;
+<style>
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+	.swiper-pagination-bullet {
+	margin: 0 5px;
 }
-.h-260 {
-	height: 260px;
-	overflow: hidden;
+.swiper-pagination-bullet {
+	width: 10px;
+	height: 10px;
+	background: rgba(255, 255, 255, 0.9);
 }
-.white {
-	color: #fff;
-}
-img {
-	width: 100%;
-	height: 260px;
-	object-fit: cover;
+.swiper-pagination-bullet-active {
+	background: white;
 }
 </style>
