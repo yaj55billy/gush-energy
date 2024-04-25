@@ -38,6 +38,7 @@ const swiperConfig = {
 			<section
 				v-for="caseItem in caseStore.caseData"
 				:key="caseItem.sectionId"
+				:id="caseItem.sectionId"
 				class="case__section"
 			>
 				<div class="case__container">

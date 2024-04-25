@@ -3,8 +3,9 @@ import { onMounted } from "vue";
 import { useIndexAbout } from "@/composables/useIndexAbout.js";
 import { useIndexKv } from "@/composables/useIndexKv.js";
 import { useAssetHandle } from "@/composables/useAssetHandle.js";
-
+import { useCaseStore } from "@/stores/useCase.js";
 const { useAsset } = useAssetHandle();
+const caseStore = useCaseStore();
 
 const { kvData, nowKvPath, kvTimer, startKvTimer } = useIndexKv();
 
@@ -75,13 +76,6 @@ onUnmounted(() => {
 					>
 						{{ nowAboutDescription }}
 					</p>
-					<!-- <NuxtLink :to="nowAboutLink" class="index__about__link"
-						>瞭解更多
-						<img
-							src="~/assets/img/index_about_arrow.png"
-							class="index__about__icon"
-						/>
-					</NuxtLink> -->
 					<ul class="index__about__pagination" v-if="aboutData.length > 1">
 						<li
 							class="index__about__pagination__item"
@@ -119,51 +113,126 @@ onUnmounted(() => {
 						<div
 							class="index__case__image"
 							:style="{
-								backgroundImage: `url(${useAsset('index_case_pic1.jpg')})`,
+								backgroundImage: `url(${useAsset(
+									caseStore.caseData[0].indexImagePath
+								)})`,
 							}"
 						>
 							<div class="index__case__textarea">
-								<h3 class="index__case__title">屋頂平舖型</h3>
+								<h3 class="index__case__title">
+									{{
+										caseStore.caseData[0].buildType
+											? caseStore.caseData[0].buildType
+											: "屋頂平鋪、棚架型"
+									}}
+								</h3>
 								<p class="index__case__text">
-									雲林縣<br />
-									工廠<br />
-									13MW
+									{{
+										caseStore.caseData[0].city
+											? caseStore.caseData[0].city
+											: "台灣"
+									}}
+									<br />
+									{{
+										caseStore.caseData[0].place
+											? caseStore.caseData[0].place
+											: "工廠"
+									}}
+									<br />
+									<span v-if="caseStore.caseData[0].capacity">
+										{{ caseStore.caseData[0].capacity }}</span
+									>
 								</p>
 							</div>
+							<NuxtLink
+								v-if="caseStore.caseData[0].sectionId"
+								:to="'/case#' + caseStore.caseData[0].sectionId"
+								class="index__case__link"
+							></NuxtLink>
 						</div>
 					</li>
 					<li class="index__case__item">
 						<div
 							class="index__case__image"
 							:style="{
-								backgroundImage: `url(${useAsset('index_case_pic2.jpg')})`,
+								backgroundImage: `url(${useAsset(
+									caseStore.caseData[1].indexImagePath
+								)})`,
 							}"
 						>
 							<div class="index__case__textarea">
-								<h3 class="index__case__title">屋頂棚架型</h3>
+								<h3 class="index__case__title">
+									{{
+										caseStore.caseData[1].buildType
+											? caseStore.caseData[1].buildType
+											: "屋頂平鋪、棚架型"
+									}}
+								</h3>
 								<p class="index__case__text">
-									雲林縣<br />
-									工廠<br />
-									522.24KW
+									{{
+										caseStore.caseData[1].city
+											? caseStore.caseData[1].city
+											: "台灣"
+									}}
+									<br />
+									{{
+										caseStore.caseData[1].place
+											? caseStore.caseData[1].place
+											: "工廠"
+									}}
+									<br />
+									<span v-if="caseStore.caseData[1].capacity">
+										{{ caseStore.caseData[1].capacity }}</span
+									>
 								</p>
 							</div>
+							<NuxtLink
+								v-if="caseStore.caseData[1].sectionId"
+								:to="'/case#' + caseStore.caseData[1].sectionId"
+								class="index__case__link"
+							></NuxtLink>
 						</div>
 					</li>
 					<li class="index__case__item">
 						<div
 							class="index__case__image"
 							:style="{
-								backgroundImage: `url(${useAsset('index_case_pic3.jpg')})`,
+								backgroundImage: `url(${useAsset(
+									caseStore.caseData[2].indexImagePath
+								)})`,
 							}"
 						>
 							<div class="index__case__textarea">
-								<h3 class="index__case__title">屋頂平鋪型</h3>
+								<h3 class="index__case__title">
+									{{
+										caseStore.caseData[2].buildType
+											? caseStore.caseData[2].buildType
+											: "屋頂平鋪、棚架型"
+									}}
+								</h3>
 								<p class="index__case__text">
-									高雄市<br />
-									特登工廠<br />
-									244.08KW
+									{{
+										caseStore.caseData[2].city
+											? caseStore.caseData[2].city
+											: "台灣"
+									}}
+									<br />
+									{{
+										caseStore.caseData[2].place
+											? caseStore.caseData[2].place
+											: "工廠"
+									}}
+									<br />
+									<span v-if="caseStore.caseData[2].capacity">
+										{{ caseStore.caseData[2].capacity }}</span
+									>
 								</p>
 							</div>
+							<NuxtLink
+								v-if="caseStore.caseData[2].sectionId"
+								:to="'/case#' + caseStore.caseData[2].sectionId"
+								class="index__case__link"
+							></NuxtLink>
 						</div>
 					</li>
 				</ul>
