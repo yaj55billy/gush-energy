@@ -43,6 +43,19 @@ export const useCaseStore = defineStore("case", () => {
 			content2: "",
 			content3: "",
 		},
+		{
+			sectionId: "case4",
+			buildType: "屋頂平鋪型",
+			city: "高雄市",
+			place: "特登工廠",
+			capacity: "244.08KW",
+			indexImagePath: "index_service_icon3.png",
+			caseImagePath: ["case3.jpg", "case1.jpg"],
+			content1:
+				"永鑫能源是國內以承攬大規模太陽能電站的知名系統商，也因此成功受到日本三井不動產肯定，成為「Mitsui Outlet Park 台中港」新建工程太陽能電站的唯一太陽能EPC廠商，投資興建屋頂及停車場兩區的太陽能電廠。",
+			content2: "",
+			content3: "",
+		},
 	]);
 
 	return {

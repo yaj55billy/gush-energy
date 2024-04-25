@@ -25,12 +25,15 @@
     +md 
       padding: 60px 32px
     +sm 
+      padding: 32px 32px 60px
       flex-wrap: wrap
   &__textarea, &__pic
     width: calc(50% - 1rem)
     +sm 
       width: 100%
   &__pic
+    +sm 
+      margin-top: 2rem
     &__content
       width: 100%
       height: 0
@@ -40,9 +43,14 @@
   &__textarea
     .page__title
       text-align: left
+      +sm 
+        text-align: center
   &__info
     margin-top: 1rem
     font-size: 1rem
+    +sm 
+      text-align: center
+      font-size: .875rem
     > span
       display: inline-block
       vertical-align: middle
@@ -67,5 +75,7 @@
     &__content
       text-align: justify
       margin-top: .75rem
+      +sm 
+        margin-top: .5rem
 
 
