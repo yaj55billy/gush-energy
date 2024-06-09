@@ -44,37 +44,63 @@ const swiperConfig = {
 				<div class="case__container">
 					<div class="case__main">
 						<div class="case__textarea">
-							<h2 class="page__title">
-								{{
-									caseItem.buildType ? caseItem.buildType : "屋頂平鋪、棚架型"
-								}}
-							</h2>
-							<div class="case__info">
-								<img
-									class="case__info__icon"
-									src="~/assets/img/case_locaion_icon.png"
-								/>
-								<span class="case__info__city">
-									{{ caseItem.city ? caseItem.city : "台灣" }}
-								</span>
-								<span class="case__info__place">
-									{{ caseItem.place ? caseItem.place : "工廠" }}
-								</span>
-								<span class="case__info__line"></span>
-								<span class="case__info__capacity" v-if="caseItem.capacity">
-									{{ caseItem.capacity }}
-								</span>
-							</div>
-							<div class="case__details">
-								<p class="case__details__content" v-if="caseItem.content1">
-									{{ caseItem.content1 }}
-								</p>
-								<p class="case__details__content" v-if="caseItem.content2">
-									{{ caseItem.content2 }}
-								</p>
-								<p class="case__details__content" v-if="caseItem.content3">
-									{{ caseItem.content3 }}
-								</p>
+							<div class="case__textarea__content">
+								<h2 class="page__title">
+									{{
+										caseItem.buildType ? caseItem.buildType : "屋頂平鋪、棚架型"
+									}}
+								</h2>
+								<div class="case__info">
+									<img
+										class="case__info__icon"
+										src="~/assets/img/case_locaion_icon.png"
+									/>
+									<span class="case__info__city">
+										{{ caseItem.city ? caseItem.city : "台灣" }}
+									</span>
+									<span class="case__info__place">
+										{{ caseItem.place ? caseItem.place : "工廠" }}
+									</span>
+									<span class="case__info__line"></span>
+									<span class="case__info__capacity" v-if="caseItem.capacity">
+										{{ caseItem.capacity }}
+									</span>
+								</div>
+								<ul class="case__details">
+									<li class="case__details__lists" v-if="caseItem.content1">
+										<div class="case__details__pic">
+											<img
+												src="~/assets/img/case_content_icon1.svg"
+												alt="power generation icon"
+											/>
+										</div>
+										<p class="case__details__content">
+											{{ caseItem.content1 }}
+										</p>
+									</li>
+									<li class="case__details__lists" v-if="caseItem.content2">
+										<div class="case__details__pic">
+											<img
+												src="~/assets/img/case_content_icon2.svg"
+												alt="carbon reduction icon"
+											/>
+										</div>
+										<p class="case__details__content">
+											{{ caseItem.content2 }}
+										</p>
+									</li>
+									<li class="case__details__lists" v-if="caseItem.content3">
+										<div class="case__details__pic">
+											<img
+												src="~/assets/img/case_content_icon3.svg"
+												alt="planting amount icon"
+											/>
+										</div>
+										<p class="case__details__content">
+											{{ caseItem.content3 }}
+										</p>
+									</li>
+								</ul>
 							</div>
 						</div>
 						<div class="case__pic">

@@ -23,16 +23,14 @@
     +lg 
       padding: 60px 0
     +md 
-      padding: 60px 32px
-    +sm 
       padding: 32px 32px 60px
       flex-wrap: wrap
   &__textarea, &__pic
     width: calc(50% - 1rem)
-    +sm 
+    +md 
       width: 100%
   &__pic
-    +sm 
+    +md 
       margin-top: 2rem
     &__content
       width: 100%
@@ -41,14 +39,27 @@
       background-position: center
       background-size: cover
   &__textarea
+    &__content
+      width: 50%
+      margin: 0 auto
+      @media(max-width: 1920px)
+        width: 70% 
+      @media(max-width: 1400px)
+        width: 88%
+      +lg
+        width: 100%
+      +md 
+        width: 300px 
+      @media(max-width: 380px)
+        width: 100%
     .page__title
       text-align: left
-      +sm 
+      +md
         text-align: center
   &__info
     margin-top: 1rem
     font-size: 1rem
-    +sm 
+    +md 
       text-align: center
       font-size: .875rem
     > span
@@ -69,13 +80,27 @@
       background-color: white
       margin: 0 .75rem
   &__details
-    margin-top: 1.5rem
-    color: $color-gray
-    font-size: .875rem
+    margin-top: 2rem
+    list-style: none
+    display: flex 
+    justify-content: space-between
+    text-align: center
+    &__pic
+      width: 48px
+      height: 48px
+      margin: 0 auto
+      display: flex 
+      justify-content: center
+      align-items: center
+    &__lists
+      text-align: center
+      width: 85px
+      @media(max-width: 340px)
+        width: 32%
     &__content
-      text-align: justify
+      color: $color-white
+      font-size: .875rem
+      line-height: 1.6
       margin-top: .75rem
-      +sm 
-        margin-top: .5rem
 
 
