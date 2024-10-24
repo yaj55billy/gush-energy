@@ -9,7 +9,8 @@
 		"preview": "nuxt preview",
 		"postinstall": "nuxt prepare",
 		"deploy": "gh-pages --dotfiles -d .output/public",
-		"deploygush": "gh-pages --dotfiles -d .output/public -r https://github.com/Gush-Energy/gush-energy"
+		"deploygush": "gh-pages --dotfiles -d .output/public -r https://github.com/Gush-Energy/gush-energy",
+		"deploygush2": "gh-pages --dotfiles -d .output/public -r https://github.com/Annie13-lin/gush-energy.git"
 	},
 	"devDependencies": {
 		"@nuxt/devtools": "latest",
