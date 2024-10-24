@@ -23,7 +23,7 @@
 						<div class="footer__contact__icon">
 							<img src="~/assets/img/icon_mail.png" />
 						</div>
-						<p class="footer__contact__text">kevin.yang@gush-energy.com</p>
+						<p class="footer__contact__text">annie.lin@gush-energy.com</p>
 					</li>
 					<li class="footer__contact__item">
 						<div class="footer__contact__icon">
